@@ -1,14 +1,23 @@
 # Blue by 2032 — Open Items
 
-Status as of June 11, 2026. The technical launch-day checklist (flipping
-the site out of pre-launch mode) lives in `report-site/README.md`.
+Status as of June 11, 2026 (evening). The technical launch-day checklist
+(flipping the site out of pre-launch mode) lives in `report-site/README.md`.
 
 ## ✅ Done
 
 - [x] Domain — purchased/handled (client side)
-- [x] Netlify — Jordan's account; site deployed at blueby2032.netlify.app
+- [x] Netlify — Jordan's account; site deployed
 - [x] Form detection enabled; both forms verified working
 - [x] Client preview of the launch scaffold at `/preview/`
+- [x] **blueby2032.com connected** — DNS cut over from Squarespace parked
+      records, Let's Encrypt SSL provisioned (auto-renews ~Sep 9),
+      www→apex redirect verified end-to-end
+- [x] Mobile header optimization — hamburger nav drawer on all pages
+      (icon-only ≤640px)
+- [x] Form UX — AJAX submits with success/error toasts; no-JS fallback
+      kept; fixed missing hidden `form-name` inputs
+- [x] "Site is live" text drafted for the client (live link + /preview/
+      link + placeholder explanation)
 
 ## 🚨 Site plumbing (Jordan manages all tech; client is non-technical)
 
@@ -28,6 +37,9 @@ receive site activity.** Everything else below is Jordan's setup work.
       (exportable as CSV).
 - [ ] Decide a cadence for forwarding/exporting download signups to the
       client (they'll want to see list growth)
+- [ ] Send the "site is live" text to the client, then (a day or so
+      later) the asset-request follow-up — the 📦 list below translated
+      into non-technical language
 
 ## 📋 Decisions / confirmations needed
 
@@ -44,9 +56,6 @@ receive site activity.** Everything else below is Jordan's setup work.
       client's donor segmentation; worth their sign-off
 - [ ] Spec completeness — the spec PDF's sections jump 1, 2, 4, 5, 8
       (no §3, §6, §7); ask for the full document
-- [x] Point blueby2032.com at the Netlify site — DONE June 11: DNS cut over
-      from Squarespace parked records, SSL provisioned, www→apex redirect
-      verified
 
 ## 📦 Launch assets owed by the author (spec §8 + implied)
 
