@@ -10,16 +10,24 @@ the site out of pre-launch mode) lives in `report-site/README.md`.
 - [x] Form detection enabled; both forms verified working
 - [x] Client preview of the launch scaffold at `/preview/`
 
-## 🚨 Ask the client now
+## 🚨 Site plumbing (Jordan manages all tech; client is non-technical)
 
-- [ ] **Briefing request destination email** — needed for Netlify →
-      Forms → Notifications on `briefing-request`. Until set, check the
-      Netlify dashboard manually so requests don't sit unseen.
-- [ ] **press@blueby2032.com** — does it exist? It's the contact on the
-      press page and the privacy policy's deletion-request address.
-      (Workaround: swap in any real address until it does.)
-- [ ] **Who sends the "report is out" email** to the notify list at
-      launch, from what address/tool (Kit planned per spec)?
+The only input needed from the client: **which email address(es) should
+receive site activity.** Everything else below is Jordan's setup work.
+
+- [ ] Get the client's receiving email address(es)
+- [ ] Netlify → Forms → Notifications: route `briefing-request` to the
+      client's email (CC Jordan to keep an eye on delivery). Until set,
+      check the Netlify dashboard manually so requests don't sit unseen.
+- [ ] Set up `press@blueby2032.com` as a forwarding alias at the domain
+      registrar/DNS host (most offer free email forwarding) → client's
+      inbox. It's on the press page and the privacy policy.
+- [ ] Kit (ConvertKit): Jordan's account; configure at launch — sends
+      the "report is out" email to the notify list. Until then,
+      `report-download` signups collect in the Netlify Forms dashboard
+      (exportable as CSV).
+- [ ] Decide a cadence for forwarding/exporting download signups to the
+      client (they'll want to see list growth)
 
 ## 📋 Decisions / confirmations needed
 
@@ -53,5 +61,3 @@ the site out of pre-launch mode) lives in `report-site/README.md`.
       cover art
 - [ ] Bibliography / public source documents
 - [ ] Corrections policy copy
-- [ ] Kit (ConvertKit) account — whose, and who configures the
-      incentive email?
