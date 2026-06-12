@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Get the Full Report — Built to Share</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="/">Built to <span>Share</span></a>
+      <div class="header-actions">
+        <a class="btn btn-ghost" href="/">← Back</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="utility-main">
+    <h1>Get the Full Report</h1>
+    <p class="lede">The report is being finished now. Leave your email and the complete PDF — every chapter, the data appendices, and the full bibliography — arrives in your inbox the day it's released.</p>
+
+    <!-- ============================================================
+         PRE-LAUNCH: this is the same Netlify form as launch, used
+         as a notify list. AT LAUNCH, restore the download copy:
+         · lede → "Your download starts immediately, and we'll
+           email you a permanent link."
+         · button → "Download the Report"
+         (action="/thanks/" already does the right thing once
+         thanks/index.html re-enables the auto-download.)
+
+         OPTION A (live now): Netlify Form.
+         Works the moment you deploy. Submissions appear in the
+         Netlify dashboard (Forms tab) and can be emailed/exported.
+
+         OPTION B (recommended for list-building): Kit (ConvertKit).
+         1. Build the same fields as a Kit form (custom fields for
+            Organization and Role → subscriber tags).
+         2. Set the form's success action to redirect to /thanks/.
+         3. Enable the incentive email containing the durable link.
+         4. Replace this entire <form> with Kit's HTML embed and
+            restyle the classes to match.
+         ============================================================ -->
+    <form name="report-download" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+      <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div class="field-row">
+        <div class="field">
+          <label for="first">First name</label>
+          <input id="first" name="first_name" type="text" autocomplete="given-name" required>
+        </div>
+        <div class="field">
+          <label for="last">Last name</label>
+          <input id="last" name="last_name" type="text" autocomplete="family-name" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="org">Organization <span class="opt">(optional)</span></label>
+        <select id="org" name="organization_type">
+          <option value="">Select one…</option>
+          <option>Campaign or party committee</option>
+          <option>Advocacy organization</option>
+          <option>Foundation or philanthropy</option>
+          <option>Academic or research</option>
+          <option>Press / media</option>
+          <option>Elected office or government</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="role">Role <span class="opt">(optional)</span></label>
+        <select id="role" name="role">
+          <option value="">Select one…</option>
+          <option>Principal / Executive Director</option>
+          <option>Donor / Funder</option>
+          <option>Staff — strategy or political</option>
+          <option>Staff — communications</option>
+          <option>Researcher / Academic</option>
+          <option>Journalist</option>
+          <option>Organizer / Volunteer</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <button class="btn btn-accent" type="submit">Notify Me at Launch</button>
+      <p class="form-note">We'll only use your email to send the report and occasional updates from the author. See our <a href="/privacy.html">privacy policy</a>.</p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <nav aria-label="Footer">
+        <a href="/">Home</a>
+        <a href="/briefing/">Request a Briefing</a>
+        <a href="/press/">Press</a>
+        <a href="/privacy.html">Privacy Policy</a>
+      </nav>
+      <p class="legal">© 2026 Blue by 2032. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

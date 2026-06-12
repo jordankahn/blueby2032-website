@@ -1,0 +1,6 @@
+<svg class="wordmark" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Built to Share">
+  <!-- PLACEHOLDER WORDMARK — replace with the commissioned SVG. -->
+  <text x="0" y="85" font-family="IBM Plex Serif, Georgia, serif" font-weight="600" font-size="92" fill="#141414" letter-spacing="-1">BUILT TO</text>
+  <text x="0" y="185" font-family="IBM Plex Serif, Georgia, serif" font-weight="600" font-size="92" fill="#1d4ed8" letter-spacing="-1">SHARE</text>
+  <rect x="0" y="215" width="800" height="3" fill="#141414"/>
+</svg>

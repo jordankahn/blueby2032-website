@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Briefing — Built to Share</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="/">Built to <span>Share</span></a>
+      <div class="header-actions">
+        <a class="btn btn-ghost" href="/">← Back</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="utility-main">
+    <h1>Request a Briefing</h1>
+    <p class="lede">The author gives a limited number of private briefings to organizations, boards, and funder tables. Tell us about yours and we'll be in touch.</p>
+
+    <!-- Netlify form. In the Netlify dashboard → Forms → notifications,
+         add an email notification to the author's address. -->
+    <form name="briefing-request" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/briefing/?sent=true">
+      <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+      <div class="field">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="org">Organization</label>
+        <input id="org" name="organization" type="text" required>
+      </div>
+      <div class="field">
+        <label for="role">Role</label>
+        <input id="role" name="role" type="text" required>
+      </div>
+      <div class="field">
+        <label for="interest">Interest area</label>
+        <select id="interest" name="interest_area" required>
+          <option value="">Select one…</option>
+          <option>Board or leadership briefing</option>
+          <option>Donor / funder briefing</option>
+          <option>Staff or campaign training</option>
+          <option>Conference or panel appearance</option>
+          <option>Press interview</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="What would you like the briefing to cover, and for whom?"></textarea>
+      </div>
+      <button class="btn btn-accent" type="submit">Send Request</button>
+      <p class="form-note">Requests go directly to the author's team. We typically respond within a few business days.</p>
+    </form>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <nav aria-label="Footer">
+        <a href="/">Home</a>
+        <a href="/download/">Get Notified</a>
+        <a href="/press/">Press</a>
+        <a href="/privacy.html">Privacy Policy</a>
+      </nav>
+      <p class="legal">© 2026 Blue by 2032. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

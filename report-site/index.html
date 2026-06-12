@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<!-- ============================================================
+     PRE-LAUNCH HOMEPAGE — live until the manuscript and the
+     designed PDF arrive. The full report page is stashed at
+     index-report.html; the flip-back checklist is in README.md.
+     The notify form below IS the launch download form: same
+     Netlify form name (report-download), same fields — so every
+     pre-launch signup lands in the same list as launch downloads.
+     ============================================================ -->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Built to Share — Power-Sharing and the Future of Party Reform</title>
+  <meta name="description" content="A forthcoming report on power-sharing and party reform. Sign up to read it the day it's published.">
+  <meta property="og:title" content="Built to Share">
+  <meta property="og:description" content="A forthcoming report on power-sharing and party reform. Sign up to read it the day it's published.">
+  <!-- At launch: add assets/social-card.png (1200×630) and restore
+       <meta property="og:image" content="/assets/social-card.png"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="/">Built to <span>Share</span></a>
+      <div class="header-actions">
+        <a class="btn btn-accent" href="#notify">Get the Report First</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ MASTHEAD ============ -->
+  <section class="masthead">
+    <div class="inner">
+      <p class="kicker">A Report on Power-Sharing &amp; Party Reform</p>
+      <!-- Wordmark: replace with commissioned SVG (also used for PDF cover + social card) -->
+      <svg class="wordmark" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Built to Share">
+        <text x="0" y="85" font-family="IBM Plex Serif, Georgia, serif" font-weight="600" font-size="92" fill="#141414" letter-spacing="-1">BUILT TO</text>
+        <text x="0" y="185" font-family="IBM Plex Serif, Georgia, serif" font-weight="600" font-size="92" fill="#1d4ed8" letter-spacing="-1">SHARE</text>
+        <rect x="0" y="215" width="800" height="3" fill="#141414"/>
+      </svg>
+      <p class="subtitle">Power-sharing and the future of party reform — the case, the evidence, and a ten-year agenda.</p>
+      <div class="byline">
+        <span><strong>Coming soon</strong></span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-accent" href="#notify">Get the Report First</a>
+        <a class="btn btn-ghost" href="/briefing/">Request a Briefing</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="report">
+
+    <!-- ============ NOTIFY / EARLY ACCESS ============ -->
+    <section id="notify">
+      <span class="part-label">Before It Drops</span>
+      <h2>Read it the day it's published.</h2>
+      <p>Built to Share is a full-length report on how a political party rebuilds by sharing power — what the evidence shows, which models work, and what a serious ten-year agenda looks like. It is being finished now.</p>
+      <p>Leave your email and the complete report — every chapter, the data appendices, and the full bibliography — arrives in your inbox the day it's released.</p>
+
+      <!-- Same Netlify form as the launch download gate: keep the
+           name "report-download" so pre-launch signups and launch
+           downloads share one submission list. -->
+      <form name="report-download" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+        <div class="field-row">
+          <div class="field">
+            <label for="first">First name</label>
+            <input id="first" name="first_name" type="text" autocomplete="given-name" required>
+          </div>
+          <div class="field">
+            <label for="last">Last name</label>
+            <input id="last" name="last_name" type="text" autocomplete="family-name" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="org">Organization <span class="opt">(optional)</span></label>
+          <select id="org" name="organization_type">
+            <option value="">Select one…</option>
+            <option>Campaign or party committee</option>
+            <option>Advocacy organization</option>
+            <option>Foundation or philanthropy</option>
+            <option>Academic or research</option>
+            <option>Press / media</option>
+            <option>Elected office or government</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="role">Role <span class="opt">(optional)</span></label>
+          <select id="role" name="role">
+            <option value="">Select one…</option>
+            <option>Principal / Executive Director</option>
+            <option>Donor / Funder</option>
+            <option>Staff — strategy or political</option>
+            <option>Staff — communications</option>
+            <option>Researcher / Academic</option>
+            <option>Journalist</option>
+            <option>Organizer / Volunteer</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <button class="btn btn-accent" type="submit">Notify Me at Launch</button>
+        <p class="form-note">We'll only use your email to send the report and occasional updates from the author. See our <a href="/privacy.html">privacy policy</a>.</p>
+      </form>
+    </section>
+  </main>
+
+  <div class="cta-band">
+    <div class="inner">
+      <h2>Don't wait for the launch.</h2>
+      <p>The author gives a limited number of private briefings to organizations, boards, and funder tables — including advance briefings on the findings.</p>
+      <a class="btn btn-accent" href="/briefing/">Request a Briefing</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <nav aria-label="Footer">
+        <a href="#notify">Get Notified</a>
+        <a href="/briefing/">Request a Briefing</a>
+        <a href="/press/">Press</a>
+        <a href="/privacy.html">Privacy Policy</a>
+      </nav>
+      <p class="legal">© 2026 Blue by 2032. All rights reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>

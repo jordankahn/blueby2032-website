@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Built to Share — Power-Sharing and the Future of Party Reform</title>
+  <meta name="description" content="A report on power-sharing and party reform. Read the full report online or download the PDF.">
+  <!-- Social card: replace assets/social-card.png with the rendered wordmark art -->
+  <meta property="og:title" content="Built to Share">
+  <meta property="og:description" content="A report on power-sharing and party reform.">
+  <meta property="og:image" content="/assets/social-card.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swapfamily=IBM+Plex+Serif:ital,wght@0,400;0,600;1,400https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swapdisplay=swap" rel="stylesheet">
+  <style>/* ============================================================
+   BUILT TO SHARE — design tokens · "Newsprint Signal"
+   Ink on near-white · heavy black rules · one signal blue
+   IBM Plex Serif (display + body) · IBM Plex Sans (utility)
+   ============================================================ */
+:root {
+  --ink: #141414;
+  --ink-soft: #1c1c1c;
+  --paper: #fbfbf8;
+  --accent: #1d4ed8;
+  --muted: #565656;
+  --rule: #141414;
+  --rule-soft: #d8d6cf;
+
+  --serif: "IBM Plex Serif", Georgia, serif;
+  --display: "IBM Plex Serif", Georgia, serif;
+  --sans: "IBM Plex Sans", -apple-system, Helvetica, Arial, sans-serif;
+
+  --measure: 42rem;
+  --gutter: clamp(1.25rem, 5vw, 2.5rem);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+body {
+  font-family: var(--serif);
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--ink-soft);
+  background: var(--paper);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--ink); text-decoration-color: var(--accent); text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+
+/* ---------- progress bar ---------- */
+#progress {
+  position: fixed; top: 0; left: 0; z-index: 60;
+  height: 3px; width: 0;
+  background: var(--accent);
+}
+
+/* ---------- sticky header (light, ruled) ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--paper);
+  color: var(--ink);
+  border-bottom: 3px solid var(--ink);
+}
+.site-header .bar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem var(--gutter);
+  max-width: 72rem; margin: 0 auto;
+}
+.site-header .brand {
+  font-family: var(--sans); font-weight: 700; font-size: 0.95rem;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink); text-decoration: none;
+}
+.site-header .brand span { color: var(--accent); }
+.header-actions { display: flex; align-items: center; gap: 0.75rem; }
+
+.btn {
+  font-family: var(--sans); font-weight: 700; font-size: 0.9rem;
+  letter-spacing: 0.04em;
+  display: inline-block;
+  padding: 0.6rem 1.15rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 0;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.btn-accent { background: var(--accent); color: #fff; border-color: var(--accent); }
+.btn-accent:hover { background: #1740b0; border-color: #1740b0; color: #fff; }
+.btn-ghost { background: transparent; color: var(--ink); }
+.btn-ghost:hover { background: var(--ink); color: var(--paper); }
+
+#nav-toggle {
+  font-family: var(--sans); font-size: 0.9rem; font-weight: 700;
+  background: none; border: 1.5px solid var(--ink);
+  border-radius: 0; color: var(--ink); padding: 0.55rem 0.9rem; cursor: pointer;
+}
+#nav-toggle:hover { background: var(--ink); color: var(--paper); }
+
+.site-nav {
+  display: none;
+  background: var(--ink);
+}
+.site-nav.open { display: block; }
+.site-nav ol, .site-nav ul {
+  list-style: none;
+  max-width: 72rem; margin: 0 auto;
+  padding: 1rem var(--gutter) 1.4rem;
+  columns: 2; column-gap: 2rem;
+}
+.site-nav a {
+  font-family: var(--sans); font-size: 0.9rem;
+  color: #eceae3; text-decoration: none;
+  display: block; padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+.site-nav a:hover { color: #fff; text-decoration: underline; text-decoration-color: var(--accent); }
+.site-nav .nav-num { color: var(--accent); font-variant-numeric: tabular-nums; margin-right: 0.5em; font-weight: 700; }
+
+/* ---------- masthead: front page, not a cover ---------- */
+.masthead {
+  background: var(--paper);
+  color: var(--ink);
+  padding: clamp(3.5rem, 9vw, 6rem) var(--gutter) clamp(3rem, 7vw, 5rem);
+  border-bottom: 3px solid var(--ink);
+}
+.masthead .inner { max-width: 56rem; margin: 0 auto; }
+.masthead .kicker {
+  font-family: var(--sans); font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--accent);
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--ink);
+  margin-bottom: 2rem;
+}
+.masthead .wordmark { max-width: 100%; height: auto; display: block; }
+.masthead .subtitle {
+  font-family: var(--serif); font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+  font-style: italic; color: var(--muted);
+  margin-top: 1.75rem; max-width: 36em;
+}
+.masthead .byline {
+  font-family: var(--sans); font-size: 0.95rem; color: var(--muted);
+  margin-top: 2.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--ink);
+  display: flex; flex-wrap: wrap; gap: 0.5rem 2rem;
+}
+.masthead .byline strong { color: var(--ink); font-weight: 600; }
+.masthead .cta-row { margin-top: 2.5rem; display: flex; flex-wrap: wrap; gap: 0.85rem; }
+
+/* ---------- article body ---------- */
+.report { padding: 0 var(--gutter); }
+.report section { max-width: var(--measure); margin: 0 auto; padding: clamp(3rem, 7vw, 4.5rem) 0; }
+.report section + section { border-top: 1px solid var(--ink); }
+
+.part-label {
+  font-family: var(--sans); font-size: 0.8rem; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent);
+  display: block; margin-bottom: 0.75rem;
+}
+h1, h2, h3 { font-family: var(--display); color: var(--ink); line-height: 1.15; }
+h2 { font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 600; margin-bottom: 1.5rem; letter-spacing: -0.01em; }
+h3 { font-size: 1.25rem; font-weight: 600; margin: 2.25rem 0 0.85rem; }
+.report p { margin-bottom: 1.25rem; }
+.report p:last-child { margin-bottom: 0; }
+
+.subsection-num { color: var(--accent); font-family: var(--sans); font-size: 0.95rem; font-weight: 700; margin-right: 0.4em; }
+
+/* pull quote — bold sans, built to be screenshotted */
+.pull-quote {
+  border-left: 3px solid var(--accent);
+  padding: 0.4rem 0 0.4rem 1.5rem;
+  margin: 2.25rem 0;
+}
+.pull-quote p {
+  font-family: var(--sans); font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 600; line-height: 1.35; color: var(--ink);
+  margin: 0;
+}
+
+/* takeaway box */
+.takeaway {
+  font-family: var(--sans);
+  background: #fff;
+  border: 1.5px solid var(--ink);
+  padding: 1.4rem 1.5rem;
+  margin: 2.25rem 0;
+  font-size: 0.98rem; line-height: 1.6;
+}
+.takeaway .takeaway-label {
+  display: block; font-size: 0.75rem; font-weight: 700;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+/* placeholder styling so unset content is unmissable */
+.placeholder { color: var(--muted); }
+.placeholder::before { content: "✎ "; color: var(--accent); }
+
+/* slim per-part CTA */
+.part-cta {
+  margin-top: 2.5rem;
+  font-family: var(--sans); font-size: 0.9rem; font-weight: 700;
+}
+.part-cta a { color: var(--accent); text-decoration-color: var(--accent); }
+.part-cta a:hover { color: var(--ink); }
+
+/* full CTA band — ink black, the page's heavy rule writ large */
+.cta-band {
+  background: var(--ink);
+  color: #fff;
+  margin: 0; padding: clamp(2.5rem, 6vw, 3.5rem) var(--gutter);
+}
+.cta-band .inner { max-width: var(--measure); margin: 0 auto; text-align: left; }
+.cta-band h2, .cta-band p { color: #fff; }
+.cta-band h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); margin-bottom: 0.75rem; }
+.cta-band p { font-size: 1.05rem; color: #c9c7c0; margin-bottom: 1.5rem; }
+.cta-band .btn-ghost { color: #fff; border-color: #fff; }
+.cta-band .btn-ghost:hover { background: #fff; color: var(--ink); }
+
+/* epigraph */
+.epigraph { font-style: italic; color: var(--muted); margin: 0 0 2rem; }
+.epigraph cite { display: block; font-style: normal; font-family: var(--sans); font-size: 0.85rem; margin-top: 0.5rem; }
+
+/* praise blurbs */
+.blurbs { display: grid; gap: 1.25rem; margin-top: 1.5rem; }
+.blurb {
+  background: #fff; border: 1px solid var(--ink);
+  padding: 1.25rem 1.4rem; font-size: 1rem;
+}
+.blurb cite { display: block; font-family: var(--sans); font-style: normal; font-size: 0.85rem; color: var(--muted); margin-top: 0.75rem; }
+
+/* ---------- utility pages ---------- */
+.utility-main {
+  max-width: 34rem; margin: 0 auto;
+  padding: clamp(3rem, 8vw, 5rem) var(--gutter);
+}
+.utility-main h1 { font-size: clamp(1.9rem, 5vw, 2.5rem); font-weight: 600; margin-bottom: 1rem; }
+.utility-main .lede { font-size: 1.15rem; color: var(--muted); margin-bottom: 2rem; }
+
+form .field { margin-bottom: 1.25rem; }
+form label {
+  font-family: var(--sans); font-size: 0.85rem; font-weight: 700;
+  letter-spacing: 0.03em; display: block; margin-bottom: 0.4rem;
+}
+form label .opt { font-weight: 400; color: var(--muted); }
+input, select, textarea {
+  font-family: var(--sans); font-size: 1rem;
+  width: 100%;
+  padding: 0.7rem 0.85rem;
+  border: 1.5px solid var(--ink);
+  border-radius: 0;
+  background: #fff; color: var(--ink);
+}
+input:focus, select:focus, textarea:focus { border-color: var(--accent); outline: none; box-shadow: 0 0 0 3px rgba(29, 78, 216, 0.18); }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+@media (max-width: 540px) { .field-row { grid-template-columns: 1fr; } }
+form .btn { width: 100%; padding: 0.85rem; font-size: 1rem; margin-top: 0.5rem; }
+.form-note { font-family: var(--sans); font-size: 0.82rem; color: var(--muted); margin-top: 1rem; }
+
+/* press kit */
+.press-list { list-style: none; margin-top: 1.5rem; }
+.press-list li { border-top: 1px solid var(--ink); padding: 1.1rem 0; }
+.press-list li:last-child { border-bottom: 1px solid var(--ink); }
+.press-list .item-name { font-family: var(--sans); font-weight: 700; }
+.press-list .item-desc { font-size: 0.95rem; color: var(--muted); }
+
+/* thanks page next actions */
+.next-actions { display: grid; gap: 1rem; margin-top: 2rem; }
+.next-actions .action-card {
+  display: block; background: #fff; border: 1.5px solid var(--ink);
+  border-left: 4px solid var(--accent);
+  padding: 1.25rem 1.4rem; text-decoration: none;
+}
+.next-actions .action-card:hover { background: var(--paper); border-left-color: var(--ink); }
+.next-actions .action-title { font-family: var(--sans); font-weight: 700; color: var(--accent); display: block; }
+.next-actions .action-desc { font-size: 0.95rem; color: var(--muted); }
+
+/* ---------- footer ---------- */
+.site-footer {
+  background: var(--ink); color: #c9c7c0;
+  padding: 3rem var(--gutter);
+  font-family: var(--sans); font-size: 0.9rem;
+}
+.site-footer .inner { max-width: 72rem; margin: 0 auto; }
+.site-footer .footer-cta { margin-bottom: 2rem; }
+.site-footer nav { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-bottom: 1.5rem; }
+.site-footer a { color: #eceae3; }
+.site-footer a:hover { color: #fff; }
+.site-footer .legal { font-size: 0.8rem; border-top: 1px solid rgba(255,255,255,0.18); padding-top: 1.25rem; }
+</style>
+</head>
+<body>
+  <div id="progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="bar">
+      <a class="brand" href="/">Built to <span>Share</span></a>
+      <div class="header-actions">
+        <a class="btn btn-accent" href="/download/">Download the Full Report</a>
+        <button id="nav-toggle" aria-expanded="false" aria-controls="site-nav">Navigate</button>
+      </div>
+    </div>
+    <nav id="site-nav" class="site-nav" aria-label="Report sections">
+      <ol>
+        <li><a href="#executive-summary">Executive Summary</a></li>
+        <li><a href="#part-1"><span class="nav-num">I.</span>The Case for Sharing Power</a></li>
+        <li><a href="#part-2"><span class="nav-num">II.</span>How Parties Lost the Room</a></li>
+        <li><a href="#part-3"><span class="nav-num">III.</span>What the Evidence Shows</a></li>
+        <li><a href="#part-4"><span class="nav-num">IV.</span>Models That Work</a></li>
+        <li><a href="#part-5"><span class="nav-num">V.</span>The Coalition Problem</a></li>
+        <li><a href="#part-6"><span class="nav-num">VI.</span>Money, Lists, and Leverage</a></li>
+        <li><a href="#part-7"><span class="nav-num">VII.</span>Reforming From Within</a></li>
+        <li><a href="#part-8"><span class="nav-num">VIII.</span>The State and Local Laboratory</a></li>
+        <li><a href="#part-9"><span class="nav-num">IX.</span>Objections, Answered</a></li>
+        <li><a href="#part-10"><span class="nav-num">X.</span>A Ten-Year Agenda</a></li>
+        <li><a href="#conclusion">Conclusion</a></li>
+        <li><a href="#author">About the Author</a></li>
+        <li><a href="#notes">Notes for the Reader</a></li>
+        <li><a href="/briefing/">Request a Briefing</a></li>
+        <li><a href="/press/">Press Kit</a></li>
+      </ol>
+    </nav>
+  </header>
+
+  <!-- ============ MASTHEAD / REPORT COVER ============ -->
+  <section class="masthead">
+    <div class="inner">
+      <p class="kicker">A Report on Power-Sharing &amp; Party Reform</p>
+      <!-- Wordmark: replace with commissioned SVG (also used for PDF cover + social card) -->
+      <svg class="wordmark" viewBox="0 0 800 240" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Built to Share">
+        <text x="0" y="85" font-family="IBM Plex Serif, Georgia, serif" font-weight="600" font-size="92" fill="#141414" letter-spacing="-1">BUILT TO</text>
+        <text x="0" y="185" font-family="IBM Plex Serif, Georgia, serif" font-weight="600" font-size="92" fill="#1d4ed8" letter-spacing="-1">SHARE</text>
+        <rect x="0" y="215" width="800" height="3" fill="#141414"/>
+      </svg>
+      <p class="subtitle placeholder">[Subtitle — one sentence stating the report's thesis, supplied by the author.]</p>
+      <div class="byline">
+        <span>By <strong>[Author Name]</strong></span>
+        <span>Published <strong>[Month Year]</strong></span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-accent" href="/download/">Download the Full Report</a>
+        <a class="btn btn-ghost" href="#executive-summary">Start Reading</a>
+      </div>
+    </div>
+  </section>
+
+  <main class="report">
+
+    <!-- ============ EXECUTIVE SUMMARY ============ -->
+    <section id="executive-summary">
+      <span class="part-label">Executive Summary</span>
+      <h2>What This Report Argues</h2>
+      <blockquote class="epigraph">
+        <p class="placeholder">[Epigraph quote — 2–3 cleared quotes go here and at the conclusion.]</p>
+        <cite class="placeholder">[Attribution]</cite>
+      </blockquote>
+      <p class="placeholder">[Executive summary, 600–900 words, supplied by the author. This is the most-read section of the site — most visitors will read only this. It should state the problem, the argument, and the three to five headline recommendations in plain language.]</p>
+      <div class="takeaway">
+        <span class="takeaway-label">The Bottom Line</span>
+        <span class="placeholder">[One-sentence distillation of the report — the line you want quoted in coverage.]</span>
+      </div>
+    </section>
+  </main>
+
+  <div class="cta-band">
+    <div class="inner">
+      <h2>Read the full report.</h2>
+      <p>Get the complete PDF — every chapter, the data appendices, and the full bibliography.</p>
+      <a class="btn btn-accent" href="/download/">Download the Full Report</a>
+    </div>
+  </div>
+
+  <main class="report">
+
+    <!-- ============ PART I ============ -->
+    <section id="part-1">
+      <span class="part-label">Part I</span>
+      <h2>The Case for Sharing Power</h2>
+      <p class="placeholder">[Manuscript Part I. Each part below follows the same structure: numbered subsections, flagged pull quotes placed by the author, and an optional takeaway box.]</p>
+      <h3><span class="subsection-num">1.1</span><span class="placeholder">[Subsection title]</span></h3>
+      <p class="placeholder">[Subsection body.]</p>
+      <div class="pull-quote"><p class="placeholder">[Flagged pull quote from the manuscript goes here.]</p></div>
+      <h3><span class="subsection-num">1.2</span><span class="placeholder">[Subsection title]</span></h3>
+      <p class="placeholder">[Subsection body.]</p>
+      <p class="part-cta"><a href="/download/">Download the full report →</a></p>
+    </section>
+
+    <!-- ============ PART II ============ -->
+    <section id="part-2">
+      <span class="part-label">Part II</span>
+      <h2>How Parties Lost the Room</h2>
+      <p class="placeholder">[Manuscript Part II.]</p>
+      <p class="part-cta"><a href="/download/">Download the full report →</a></p>
+    </section>
+
+    <!-- ============ PART III ============ -->
+    <section id="part-3">
+      <span class="part-label">Part III</span>
+      <h2>What the Evidence Shows</h2>
+      <p class="placeholder">[Manuscript Part III.]</p>
+      <div class="takeaway">
+        <span class="takeaway-label">Key Finding</span>
+        <span class="placeholder">[Headline data point or finding, stated in one or two sentences.]</span>
+      </div>
+      <p class="part-cta"><a href="/download/">Download the full report →</a></p>
+    </section>
+
+    <!-- ============ PART IV ============ -->
+    <section id="part-4">
+      <span class="part-label">Part IV</span>
+      <h2>Models That Work</h2>
+      <p class="placeholder">[Manuscript Part IV.]</p>
+      <p class="part-cta"><a href="/download/">Download the full report →</a></p>
+    </section>
+
+    <!-- ============ PART V ============ -->
+    <section id="part-5">
+      <span class="part-label">Part V</span>
+      <h2>The Coalition Problem</h2>
+      <p class="placeholder">[Manuscript Part V.]</p>
+      <div class="pull-quote"><p class="placeholder">[Flagged pull quote.]</p></div>
+      <p class="part-cta"><a href="/download/">Download the full report →</a></p>
+    </section>
+
+    <!-- ============ PART VI ============ -->
+    <section id="part-6">
+      <span class="part-label">Part VI</span>
+      <h2>Money, Lists, and Leverage</h2>
+      <p class="placeholder">[Manuscript Part VI.]</p>
+      <p class="part-cta"><a href="/download/">Download the full report →</a></p>
+    </section>
+
+    <!-- ============ PART VII ============ -->
+    <section id="part-7">
+      <span class="part-label">Part VII</span>
+      <h2>Reforming From Within</h2>
+      <p class="placeholder">[Manuscript Part VII.]</p>
+      <p class="part-cta"><a href="/download/">Download the full report →</a></p>
+    </section>
+
+    <!-- ============ PART VIII ============ -->
+    <section id="part-8">
+      <span class="part-label">Part VIII</span>
+      <h2>The State and Local Laboratory</h2>
+      <p class="placeholder">[Manuscript Part VIII.]</p>
+      <p class="part-cta"><a href="/download/">Download the full report →</a></p>
+    </section>
+
+    <!-- ============ PART IX ============ -->
+    <section id="part-9">
+      <span class="part-label">Part IX</span>
+      <h2>Objections, Answered</h2>
+      <p class="placeholder">[Manuscript Part IX.]</p>
+      <p class="part-cta"><a href="/download/">Download the full report →</a></p>
+    </section>
+
+    <!-- ============ PART X ============ -->
+    <section id="part-10">
+      <span class="part-label">Part X</span>
+      <h2>A Ten-Year Agenda</h2>
+      <p class="placeholder">[Manuscript Part X.]</p>
+      <p class="part-cta"><a href="/download/">Download the full report →</a></p>
+    </section>
+
+    <!-- ============ CONCLUSION ============ -->
+    <section id="conclusion">
+      <span class="part-label">Conclusion</span>
+      <h2>Where This Goes Next</h2>
+      <p class="placeholder">[Conclusion from the manuscript.]</p>
+    </section>
+  </main>
+
+  <div class="cta-band">
+    <div class="inner">
+      <h2>Take the next step.</h2>
+      <p>Download the complete report, or request a private briefing with the author for your organization.</p>
+      <a class="btn btn-accent" href="/download/">Download the Full Report</a>&nbsp;&nbsp;
+      <a class="btn btn-ghost" href="/briefing/">Request a Briefing</a>
+    </div>
+  </div>
+
+  <main class="report">
+
+    <!-- ============ ABOUT THE AUTHOR ============ -->
+    <section id="author">
+      <span class="part-label">About the Author</span>
+      <h2 class="placeholder">[Author Name]</h2>
+      <p class="placeholder">[Author bio — credentials, prior work, and why this author is the person to write this report. Headshot available in the press kit.]</p>
+      <h3>Praise for the Report</h3>
+      <div class="blurbs">
+        <blockquote class="blurb"><p class="placeholder">[Praise blurb 1 — collect 6–12 named blurbs pre-launch.]</p><cite class="placeholder">[Name, Title, Organization]</cite></blockquote>
+        <blockquote class="blurb"><p class="placeholder">[Praise blurb 2.]</p><cite class="placeholder">[Name, Title, Organization]</cite></blockquote>
+        <blockquote class="blurb"><p class="placeholder">[Praise blurb 3.]</p><cite class="placeholder">[Name, Title, Organization]</cite></blockquote>
+      </div>
+    </section>
+
+    <!-- ============ NOTES FOR THE READER ============ -->
+    <section id="notes">
+      <span class="part-label">Notes for the Reader</span>
+      <h2>Methodology &amp; Corrections</h2>
+      <h3>Methodology</h3>
+      <p class="placeholder">[Plain-language note on sources, methods, and data appendices. Link the bibliography and public source documents here.]</p>
+      <h3>Corrections Policy</h3>
+      <p class="placeholder">[Corrections policy copy — plain language, supplied by the author.]</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="inner">
+      <div class="footer-cta">
+        <a class="btn btn-accent" href="/download/">Download the Full Report</a>
+      </div>
+      <nav aria-label="Footer">
+        <a href="/download/">Download</a>
+        <a href="/briefing/">Request a Briefing</a>
+        <a href="/press/">Press Kit</a>
+        <a href="#executive-summary">Read the Report</a>
+        <a href="/privacy.html">Privacy Policy</a>
+      </nav>
+      <p class="legal">© [Year] [Author / Project Name]. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>// Reading progress bar
+const bar = document.getElementById("progress");
+if (bar) {
+  const update = () => {
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    bar.style.width = max > 0 ? (h.scrollTop / max) * 100 + "%" : "0%";
+  };
+  document.addEventListener("scroll", update, { passive: true });
+  update();
+}
+
+// Section navigation toggle
+const toggle = document.getElementById("nav-toggle");
+const nav = document.getElementById("site-nav");
+if (toggle && nav) {
+  toggle.addEventListener("click", () => {
+    const open = nav.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", open);
+  });
+  nav.addEventListener("click", (e) => {
+    if (e.target.tagName === "A") {
+      nav.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+// Thanks page: start the download automatically
+const dl = document.getElementById("auto-download");
+if (dl) {
+  setTimeout(() => dl.click(), 600);
+}
+</script>
+</body>
+</html>

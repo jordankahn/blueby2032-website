@@ -1,0 +1,7 @@
+.DS_Store
+
+# Client documents — keep out of the public repo
+Report Website Spec .pdf
+
+# Never commit — local secrets
+DO NOT COMMIT/
