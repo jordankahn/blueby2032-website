@@ -40,6 +40,10 @@ receive site activity.** Everything else below is Jordan's setup work.
 - [ ] Send the "site is live" text to the client, then (a day or so
       later) the asset-request follow-up — the 📦 list below translated
       into non-technical language
+- [ ] Site is password-gated for client review (edge function +
+      SITE_PASSWORD env var in Netlify). **Remember to unlock when the
+      client approves** — delete the env var + redeploy. While gated,
+      signups are paused and the client needs the password.
 
 ## 📋 Decisions / confirmations needed
 
