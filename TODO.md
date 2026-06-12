@@ -44,7 +44,9 @@ receive site activity.** Everything else below is Jordan's setup work.
       client's donor segmentation; worth their sign-off
 - [ ] Spec completeness — the spec PDF's sections jump 1, 2, 4, 5, 8
       (no §3, §6, §7); ask for the full document
-- [ ] Point blueby2032.com at the Netlify site (Jordan, when ready)
+- [x] Point blueby2032.com at the Netlify site — DONE June 11: DNS cut over
+      from Squarespace parked records, SSL provisioned, www→apex redirect
+      verified
 
 ## 📦 Launch assets owed by the author (spec §8 + implied)
 
