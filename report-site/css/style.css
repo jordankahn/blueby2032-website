@@ -193,6 +193,17 @@ h3 { font-size: 1.25rem; font-weight: 600; margin: 2.25rem 0 0.85rem; }
 .placeholder { color: var(--muted); }
 .placeholder::before { content: "✎ "; color: var(--accent); }
 
+/* pre-launch preview banner on index-report.html — remove at launch */
+.preview-note {
+  font-family: var(--sans); font-size: 0.85rem; font-weight: 600;
+  color: var(--muted);
+  background: var(--paper);
+  border-bottom: 1px solid var(--rule-soft);
+  padding: 0.6rem var(--gutter);
+  text-align: center;
+}
+.preview-note .placeholder { font-weight: 600; }
+
 /* slim per-part CTA */
 .part-cta {
   margin-top: 2.5rem;

@@ -23,8 +23,10 @@ the same list as launch downloads.
 ### Flip-back checklist (when assets arrive)
 
 1. Pour the manuscript into `index-report.html` per CLAUDE.md, then
-   `mv index-report.html index.html` and delete the `noindex` meta + the
-   stash comment at the top.
+   `mv index-report.html index.html` and delete the `noindex` meta, the
+   stash comment at the top, and the `.preview-note` banner div.
+   Also delete the `/preview/` rewrites in `_redirects` (the client
+   preview URL).
 2. Drop the designed PDF at `assets/report.pdf` (rename the file, not links).
 3. `thanks/index.html` — swap the "you're on the list" h1/lede for the
    commented-out instant-download block.
