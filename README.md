@@ -1,6 +1,6 @@
 # Blue by 2032 — Report Website
 
-The website for **Built to Share**, a forthcoming report on power-sharing
+The website for **Blue by 2032**, a forthcoming report on power-sharing
 and party reform, published at [blueby2032.com](https://blueby2032.com).
 Modeled on decidingtowin.org: one long-form report page, a gated PDF
 download, a briefing-request form, and a press kit.

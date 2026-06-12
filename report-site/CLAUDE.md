@@ -4,7 +4,7 @@ Guidance for Claude Code when working in this repository.
 
 ## What this is
 
-A static report site ("Built to Share") modeled on decidingtowin.org: one
+A static report site ("Blue by 2032") modeled on decidingtowin.org: one
 long-form scrolling report page, a gated PDF download, a briefing-request
 form, and a press kit. The audiences are readers (mobile-first), press, and
 donors. The site's jobs, in order: get the report read, capture emails via
@@ -109,5 +109,8 @@ styling holds.
   footer, mirror it across all six pages.
 - Before-launch find/replace list lives in README.md ([Author Name],
   [Month Year], etc.). Don't invent values for these. Already applied:
-  domain blueby2032.com; © line "2026 Blue by 2032" (the project name —
-  the report title is "Built to Share", the project is Blue by 2032).
+  domain blueby2032.com; © line "2026 Blue by 2032". The site is branded
+  "Blue by 2032" throughout (an earlier scaffold called the report "Built
+  to Share" — that title was invented, not client-supplied, and has been
+  retired; if the author later names the report something distinct,
+  update the wordmark, <title>s, and og tags).

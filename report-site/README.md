@@ -1,4 +1,4 @@
-# Built to Share — Report Site
+# Blue by 2032 — Report Site
 
 Static report site modeled on decidingtowin.org: one long-form report page,
 gated PDF download, briefing request, and press kit. No build step, no
