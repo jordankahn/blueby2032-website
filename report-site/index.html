@@ -29,8 +29,19 @@
       <a class="brand" href="/">Blue by <span>2032</span></a>
       <div class="header-actions">
         <a class="btn btn-accent" href="#notify">Get the Report First</a>
+        <button id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+          <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span><span class="nav-toggle-label">Menu</span>
+        </button>
       </div>
     </div>
+    <nav id="site-nav" class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="#notify">Get Notified</a></li>
+        <li><a href="/briefing/">Request a Briefing</a></li>
+        <li><a href="/press/">Press</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+      </ul>
+    </nav>
   </header>
 
   <!-- ============ MASTHEAD ============ -->
@@ -66,6 +77,7 @@
            name "report-download" so pre-launch signups and launch
            downloads share one submission list. -->
       <form name="report-download" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="report-download">
         <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
         <div class="field-row">
           <div class="field">
@@ -134,5 +146,6 @@
     </div>
   </footer>
 
+  <script src="/js/main.js"></script>
 </body>
 </html>

@@ -15,8 +15,20 @@
       <a class="brand" href="/">Blue by <span>2032</span></a>
       <div class="header-actions">
         <a class="btn btn-ghost" href="/">← Back</a>
+        <button id="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">
+          <span class="bars" aria-hidden="true"><span></span><span></span><span></span></span><span class="nav-toggle-label">Menu</span>
+        </button>
       </div>
     </div>
+    <nav id="site-nav" class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/download/">Get Notified</a></li>
+        <li><a href="/briefing/">Request a Briefing</a></li>
+        <li><a href="/press/">Press</a></li>
+        <li><a href="/privacy.html">Privacy Policy</a></li>
+      </ul>
+    </nav>
   </header>
 
   <main class="utility-main">
@@ -60,5 +72,6 @@
       <p class="legal">© 2026 Blue by 2032. All rights reserved.</p>
     </div>
   </footer>
+  <script src="/js/main.js"></script>
 </body>
 </html>

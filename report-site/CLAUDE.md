@@ -32,7 +32,7 @@ press/index.html    Press kit                  → /press/
 thanks/index.html   Post-download, auto-starts PDF → /thanks/
 privacy.html        Privacy policy
 css/style.css       The whole design system; tokens in :root at the top
-js/main.js          Progress bar, nav drawer, thanks-page auto-download
+js/main.js          Progress bar, nav drawer, thanks auto-download, form AJAX + toasts
 assets/             report.pdf (the gated asset), wordmark.svg, press files
 ```
 

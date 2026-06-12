@@ -88,8 +88,18 @@ a:hover { color: var(--accent); }
   font-family: var(--sans); font-size: 0.9rem; font-weight: 700;
   background: none; border: 1.5px solid var(--ink);
   border-radius: 0; color: var(--ink); padding: 0.55rem 0.9rem; cursor: pointer;
+  display: inline-flex; align-items: center; gap: 0.5em;
 }
 #nav-toggle:hover { background: var(--ink); color: var(--paper); }
+#nav-toggle .bars { display: inline-flex; flex-direction: column; gap: 4px; }
+#nav-toggle .bars span { display: block; width: 16px; height: 2px; background: currentColor; }
+
+/* mobile header: icon-only hamburger, CTA lives in the drawer/masthead */
+@media (max-width: 640px) {
+  .nav-toggle-label { display: none; }
+  .site-header .header-actions .btn-accent { display: none; }
+  .site-nav ol, .site-nav ul { columns: 1; }
+}
 
 .site-nav {
   display: none;
@@ -192,6 +202,23 @@ h3 { font-size: 1.25rem; font-weight: 600; margin: 2.25rem 0 0.85rem; }
 /* placeholder styling so unset content is unmissable */
 .placeholder { color: var(--muted); }
 .placeholder::before { content: "✎ "; color: var(--accent); }
+
+/* toast notifications (form confirmation / error) */
+.toast-stack {
+  position: fixed; bottom: 1.25rem; left: 50%; transform: translateX(-50%);
+  z-index: 80;
+  width: min(26rem, calc(100vw - 2rem));
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.toast {
+  font-family: var(--sans); font-size: 0.9rem; font-weight: 600; line-height: 1.4;
+  background: var(--ink); color: var(--paper);
+  padding: 0.85rem 1.1rem;
+  opacity: 0; transform: translateY(0.5rem);
+  transition: opacity 0.25s, transform 0.25s;
+}
+.toast.show { opacity: 1; transform: none; }
+.toast-error { background: var(--paper); color: var(--ink); border: 1.5px solid var(--ink); }
 
 /* pre-launch preview banner on index-report.html — remove at launch */
 .preview-note {
