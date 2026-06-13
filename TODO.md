@@ -37,10 +37,15 @@ flips straight to the full report and unlocks — the public never sees the
 The only input needed from the client: **which email address(es) should
 receive site activity.** Everything else below is Jordan's setup work.
 
-- [ ] Get the client's receiving email address(es)
-- [ ] Netlify → Forms → Notifications: route `briefing-request` to the
-      client's email (CC Jordan to keep an eye on delivery). Until set,
-      check the Netlify dashboard manually so requests don't sit unseen.
+- [x] Form notifications working — both `briefing-request` and
+      `report-download` email jordankahn2@gmail.com; tested end-to-end
+      June 13 (both arrived, no spam).
+- [ ] **At launch: remove/mute the `report-download` notification**
+      (Netlify → Forms → Notifications → Options → Remove). One email per
+      download buries the inbox once public; downloads belong in the
+      dashboard / Kit, not per-submission email.
+- [ ] Get the client's receiving email → add it as a second recipient on
+      the `briefing-request` notification (she should see donor/org leads).
 - [ ] Set up `press@blueby2032.com` as a forwarding alias at the domain
       registrar/DNS host (most offer free email forwarding) → client's
       inbox. It's on the press page and the privacy policy.
