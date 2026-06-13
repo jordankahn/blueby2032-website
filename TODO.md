@@ -1,7 +1,20 @@
 # Blue by 2032 — Open Items
 
-Status as of June 11, 2026 (evening). The technical launch-day checklist
-(flipping the site out of pre-launch mode) lives in `report-site/README.md`.
+Status as of June 13, 2026. The technical launch-day checklist (flipping
+the site out of pre-launch mode) lives in `report-site/README.md`.
+
+## ⚑ Launch model (client decision, June 13)
+
+**Site + report launch together. No pre-launch email capture.** The site
+stays PASSWORD-GATED (client review only) until the report is ready, then
+flips straight to the full report and unlocks — the public never sees the
+"notify me" holding page. Implications:
+- The notify/capture homepage and the Kit list are no longer needed as a
+  pre-launch list-builder. (Kit may still be wanted at launch for the
+  download incentive email — confirm.)
+- No rush to unlock. Unlock happens AT launch, with real assets in place.
+- **Assets expected Monday, June 15** (client may update). That's the
+  trigger for the pour-in-manuscript + flip-to-launch work.
 
 ## ✅ Done
 
