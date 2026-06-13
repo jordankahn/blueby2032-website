@@ -32,29 +32,36 @@ flips straight to the full report and unlocks — the public never sees the
 - [x] "Site is live" text drafted for the client (live link + /preview/
       link + placeholder explanation)
 
-## 🚨 Site plumbing (Jordan manages all tech; client is non-technical)
+## 🚨 Site plumbing — goal: hands-off for Jordan (break-fix only)
 
-The only input needed from the client: **which email address(es) should
-receive site activity.** Everything else below is Jordan's setup work.
+**Operating model (Jordan decision, June 13):** Jordan does NOT want to be
+the ongoing operator — only the technical custodian / break-fix contact.
+So route all *operational outputs* to the client; Jordan owns only the
+infra that needs zero routine work. Split:
+- **Jordan = technical custodian:** owns Netlify (do NOT transfer to a
+  non-technical client — that makes breakage worse). Static site = near-
+  zero maintenance: SSL auto-renews, deploys auto, nothing to patch.
+- **Client = operational owner:** leads → her email; list + broadcasts +
+  signup numbers → her Kit account.
 
-- [x] Form notifications working — both `briefing-request` and
-      `report-download` email jordankahn2@gmail.com; tested end-to-end
-      June 13 (both arrived, no spam).
+- [x] Form notifications working — tested end-to-end June 13 (both arrived,
+      no spam). Currently both go to jordankahn2@gmail.com (interim).
+- [ ] **Repoint `briefing-request` notification to the CLIENT's email**
+      (once she has one) so leads reach her directly. Jordan optional as a
+      silent backup CC, not the primary — that's the hands-off change.
 - [ ] **At launch: remove/mute the `report-download` notification**
       (Netlify → Forms → Notifications → Options → Remove). One email per
-      download buries the inbox once public; downloads belong in the
-      dashboard / Kit, not per-submission email.
-- [ ] Get the client's receiving email → add it as a second recipient on
-      the `briefing-request` notification (she should see donor/org leads).
-- [ ] Set up `press@blueby2032.com` as a forwarding alias at the domain
-      registrar/DNS host (most offer free email forwarding) → client's
-      inbox. It's on the press page and the privacy policy.
-- [ ] Kit (ConvertKit): Jordan's account; configure at launch — sends
-      the "report is out" email to the notify list. Until then,
-      `report-download` signups collect in the Netlify Forms dashboard
-      (exportable as CSV).
-- [ ] Decide a cadence for forwarding/exporting download signups to the
-      client (they'll want to see list growth)
+      download buries an inbox once public; downloads belong in Kit.
+- [ ] Set up `press@blueby2032.com` as a forwarding alias → client's inbox
+      (free email forwarding at the DNS host). On the press page + privacy.
+- [ ] **Kit (ConvertKit) on the CLIENT's account, not Jordan's.** Jordan
+      configures once (download list + automatic PDF-delivery email), then
+      hands her the login. She sends any newsletters and sees her own
+      numbers — keeps Jordan out of the broadcast/reporting loop. Ties to
+      the 100/mo Netlify Forms cap: once downloads run through Kit they
+      bypass Netlify Forms entirely, so the cap only ever has to cover
+      briefing requests (always well under 100). **Kit must be ready by
+      launch** or downloads fall back to Netlify Forms and can hit the cap.
 - [ ] Send the "site is live" text to the client, then (a day or so
       later) the asset-request follow-up — the 📦 list below translated
       into non-technical language
