@@ -1,5 +1,4 @@
-# Client preview of the full report scaffold (launch homepage).
-# Serves index-report.html without exposing the filename.
-# AT LAUNCH: delete this rewrite (index-report.html becomes index.html).
-/preview/  /index-report.html  200
-/preview   /index-report.html  200
+# The full report is now the homepage. Keep the old client preview
+# link (/preview/) working by pointing it at the root.
+/preview/  /  301
+/preview   /  301

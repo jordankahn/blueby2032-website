@@ -14,13 +14,14 @@ the download gate, and convert high-intent readers to briefing requests.
 to Netlify as-is. Do not introduce a bundler, a framework, npm, or a CSS
 preprocessor. If a change seems to require one, it's the wrong change.
 
-**PRE-LAUNCH STATE (since June 2026):** the site is live before any author
-assets exist. `index.html` is a notify/capture holding page; the real
-report page is stashed at `index-report.html` (noindexed). The download
-gate runs as a notify list (same `report-download` form name — do not
-change it), `/thanks/` doesn't auto-download, `/press/` is a stub. The
-flip-back checklist is in README.md. When the manuscript arrives, pour it
-into `index-report.html`, then move that file back to `index.html`.
+**PRE-LAUNCH STATE (June 2026):** site + report launch together (client
+decided against pre-launch email capture). `index.html` IS the full report
+with placeholder content, and the WHOLE SITE is password-gated by a Netlify
+edge function (`netlify/edge-functions/auth.ts` + the `SITE_PASSWORD` env
+var) until the manuscript lands. `/download/` shows "notify me" copy,
+`/thanks/` doesn't auto-download, `/press/` is a stub, `/preview/` 301s to
+`/`. Launch checklist is in README.md; going public = deleting the
+`SITE_PASSWORD` env var in Netlify and redeploying.
 
 ## Layout
 

@@ -6,27 +6,26 @@ framework — deployable to Netlify as-is.
 
 ## ⚠️ CURRENT STATE: PRE-LAUNCH (June 2026)
 
-The client wanted the site live before any author assets arrived, so the
-site is deployed in a pre-launch shape. No page shows placeholder brackets;
-everything live is real. The notify form IS the launch download form (same
-Netlify form name `report-download`), so every pre-launch signup lands in
-the same list as launch downloads.
+Launch model (client decision, June 13): the site and the report go live
+TOGETHER — no pre-launch email capture. So `index.html` IS the full report
+(placeholder content for now), and the whole site is PASSWORD-GATED via a
+Netlify edge function (`netlify/edge-functions/auth.ts` + the `SITE_PASSWORD`
+env var) until the manuscript is in. Going public = deleting that env var.
 
-- `index.html` — pre-launch homepage: masthead + notify form + briefing CTA
-- `index-report.html` — the REAL homepage (full report shell), stashed,
-  `noindex`ed, waiting for the manuscript
-- `/download/` — same form, "notify me" copy
-- `/thanks/` — "you're on the list" (auto-download commented out)
+- `index.html` — the full report (single scrolling page), placeholder copy,
+  with a `.preview-note` banner explaining the gray placeholders
+- `/download/` — the gated download form, currently "notify me" copy
+- `/thanks/` — post-submit page (auto-download commented out)
 - `/press/` — "press kit at launch" note (kit list preserved in a comment)
-- `/briefing/` — fully live (this works with zero assets)
+- `/briefing/` — fully live
+- `/preview/` → 301 to `/` (the old client preview link; the report is the
+  homepage now)
 
-### Flip-back checklist (when assets arrive)
+### Launch checklist (when assets arrive)
 
-1. Pour the manuscript into `index-report.html` per CLAUDE.md, then
-   `mv index-report.html index.html` and delete the `noindex` meta, the
-   stash comment at the top, and the `.preview-note` banner div.
-   Also delete the `/preview/` rewrites in `_redirects` (the client
-   preview URL).
+1. Pour the manuscript into `index.html` per CLAUDE.md; remove each
+   `.placeholder` class as you fill it. Then delete the `.preview-note`
+   banner div near the top.
 2. Drop the designed PDF at `assets/report.pdf` (rename the file, not links).
 3. `thanks/index.html` — swap the "you're on the list" h1/lede for the
    commented-out instant-download block.
@@ -34,12 +33,14 @@ the same list as launch downloads.
    (lede + button text).
 5. `press/index.html` — drop press files in `/assets/`, uncomment the kit
    list, retitle "Press" → "Press Kit".
-6. Add `assets/social-card.png` (1200×630) and restore the `og:image` meta.
-7. Replace the placeholder wordmark SVG (index + `assets/wordmark.svg`)
+6. Add `assets/social-card.png` (1200×630) — the `og:image` meta is already
+   in `index.html`.
+7. Replace the placeholder wordmark SVG (`index.html` + `assets/wordmark.svg`)
    with the commissioned one.
-8. Footer labels: "Get Notified" → "Download", "Home" → "Read the Report".
-9. Have the author's team review `privacy.html` (minimal real copy is live)
-   and confirm `press@blueby2032.com` exists as a mailbox/alias.
+8. Footer labels on the utility pages: "Get Notified" → "Download".
+9. Have the author's team review `privacy.html` (minimal real copy is live).
+10. **Go public:** delete the `SITE_PASSWORD` env var in Netlify and redeploy.
+    Optionally wire the `briefing-request` email notification first.
 
 ## Structure
 
