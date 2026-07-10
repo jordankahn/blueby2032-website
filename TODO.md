@@ -76,8 +76,8 @@ infra that needs zero routine work. Split:
       Last "by 2032" — Google requires two fields; displays joined as "Blue
       by 2032"). Account-wide, so it also shows in Calendar/Meet/Docs.
       Client confirmed the "Blue by 2032" sender name (July 10).
-- [ ] Hand the client the `info@blueby2032.com` login; have her change the
-      password on first sign-in.
+- [x] Handed the client the `info@blueby2032.com` login (July 10). Remind
+      her to change the password on first sign-in.
 - [x] Reconcile the site's `press@blueby2032.com` references → both mailto
       links (privacy page + press page) now point to `info@blueby2032.com`
       (client chose the single-inbox address over a press@ alias).
