@@ -37,7 +37,10 @@ env var) until the manuscript is in. Going public = deleting that env var.
    in `index.html`.
 7. Replace the placeholder wordmark SVG (`index.html` + `assets/wordmark.svg`)
    with the commissioned one.
-8. Footer labels on the utility pages: "Get Notified" → "Download".
+8. Swap "Get Notified" → "Download" on the utility pages (download,
+   briefing, press, thanks, privacy). It appears TWICE per page — in the
+   nav menu AND the footer — so do a global find/replace, don't stop at
+   the footer.
 9. Have the author's team review `privacy.html` (minimal real copy is live).
 10. **Go public:** delete the `SITE_PASSWORD` env var in Netlify and redeploy.
     Optionally wire the `briefing-request` email notification first.
