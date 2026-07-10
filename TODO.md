@@ -46,14 +46,41 @@ infra that needs zero routine work. Split:
 
 - [x] Form notifications working — tested end-to-end June 13 (both arrived,
       no spam). Currently both go to jordankahn2@gmail.com (interim).
-- [ ] **Repoint `briefing-request` notification to the CLIENT's email**
-      (once she has one) so leads reach her directly. Jordan optional as a
-      silent backup CC, not the primary — that's the hands-off change.
+- [x] **Repointed `briefing-request` notification to `info@blueby2032.com`**
+      (July 10) — leads now reach the client directly (the hands-off change).
+      Netlify form notifications are per-form, so `report-download` still
+      goes to jordankahn2@gmail.com and is untouched (mute at launch).
 - [ ] **At launch: remove/mute the `report-download` notification**
       (Netlify → Forms → Notifications → Options → Remove). One email per
       download buries an inbox once public; downloads belong in Kit.
-- [ ] Set up `press@blueby2032.com` as a forwarding alias → client's inbox
-      (free email forwarding at the DNS host). On the press page + privacy.
+- [x] **Email service chosen (client, July 10):** full Google Workspace
+      mailbox `info@blueby2032.com` via Squarespace (~$6/mo, send + receive
+      from the branded address). Squarespace manages DNS (nsc*.squarespacedns.com)
+      so it auto-provisions the Workspace MX records — no manual DNS work, and
+      no conflict with the Netlify web hosting (A record, separate from MX).
+- [x] **Mailbox provisioned & working (July 10).** `info@blueby2032.com`
+      Google Workspace account created via Squarespace (Business Starter,
+      paid annually, admin user `info`). DNS all in place: MX (5 `aspmx`
+      records), SPF (`v=spf1 include:_spf.google.com ~all`), DKIM
+      (`google._domainkey` TXT), and two `google-site-verification` TXTs —
+      Squarespace auto-added most; the web hosting A/CNAME records are
+      untouched. DKIM turned ON in Google Admin (Gmail → Authenticate email
+      → Start authentication). Send + receive both tested OK.
+      - **Note (deliverability):** cold email to a brand-new recipient hit
+        spam once — normal for a fresh domain with zero reputation. Self-
+        corrects with warmup (real low-volume sending + recipients marking
+        "not spam"). Skipped DMARC for now (needs a client 2FA code to add;
+        add it whenever next in DNS — minor vs. DKIM + warmup).
+- [x] **Outgoing sender name set to "Blue by 2032"** (was the client's
+      personal name). Done via Google Admin profile name (First "Blue" /
+      Last "by 2032" — Google requires two fields; displays joined as "Blue
+      by 2032"). Account-wide, so it also shows in Calendar/Meet/Docs.
+      Client confirmed the "Blue by 2032" sender name (July 10).
+- [ ] Hand the client the `info@blueby2032.com` login; have her change the
+      password on first sign-in.
+- [x] Reconcile the site's `press@blueby2032.com` references → both mailto
+      links (privacy page + press page) now point to `info@blueby2032.com`
+      (client chose the single-inbox address over a press@ alias).
 - [ ] **Kit (ConvertKit) on the CLIENT's account, not Jordan's.** Jordan
       configures once (download list + automatic PDF-delivery email), then
       hands her the login. She sends any newsletters and sees her own
