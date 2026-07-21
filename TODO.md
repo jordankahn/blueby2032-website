@@ -13,8 +13,9 @@ flips straight to the full report and unlocks — the public never sees the
   pre-launch list-builder. (Kit may still be wanted at launch for the
   download incentive email — confirm.)
 - No rush to unlock. Unlock happens AT launch, with real assets in place.
-- **Assets expected Monday, June 15** (client may update). That's the
-  trigger for the pour-in-manuscript + flip-to-launch work.
+- **Report expected July 21–22** (client update, July 20) — the manuscript,
+  and hopefully some of the other materials too. That's the trigger for the
+  pour-in-manuscript + flip-to-launch work. (Earlier June 15 estimate slipped.)
 
 ## ✅ Done
 
@@ -76,8 +77,9 @@ infra that needs zero routine work. Split:
       Last "by 2032" — Google requires two fields; displays joined as "Blue
       by 2032"). Account-wide, so it also shows in Calendar/Meet/Docs.
       Client confirmed the "Blue by 2032" sender name (July 10).
-- [x] Handed the client the `info@blueby2032.com` login (July 10). Remind
-      her to change the password on first sign-in.
+- [x] Handed the client the `info@blueby2032.com` login (July 10).
+      **Confirmed: client accessed the mailbox (July 20).** Remind her to
+      change the password on first sign-in if she hasn't.
 - [x] Reconcile the site's `press@blueby2032.com` references → both mailto
       links (privacy page + press page) now point to `info@blueby2032.com`
       (client chose the single-inbox address over a press@ alias).
