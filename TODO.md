@@ -101,6 +101,12 @@ infra that needs zero routine work. Split:
 
 ## 📋 Decisions / confirmations needed
 
+**HOLD the questions email (July 20):** client is writing up a batch of site
+edits (with screenshots) alongside the report. Her edit doc will likely
+answer several of these already — subtitle, thesis line, launch date, maybe
+the dropdown options. Wait for it, then ask only about whatever's *still*
+open. Don't send a separate question list on top of her incoming edits.
+
 - [ ] Report title & subtitle — site says "Blue by 2032 — Power-Sharing
       and the Future of Party Reform"; the subtitle is invented, not
       client-supplied
