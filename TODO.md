@@ -101,19 +101,26 @@ infra that needs zero routine work. Split:
 
 ## 📋 Decisions / confirmations needed
 
-**HOLD the questions email (July 20):** client is writing up a batch of site
-edits (with screenshots) alongside the report. Her edit doc will likely
-answer several of these already — subtitle, thesis line, launch date, maybe
-the dropdown options. Wait for it, then ask only about whatever's *still*
-open. Don't send a separate question list on top of her incoming edits.
+**Client edits arrived July 22** (email + marked-up PPT + site-copy doc) and
+are APPLIED: real copy poured into exec summary + all ten parts, new
+subtitle, utility-page launch copy, privacy approved. Resolved and still-open
+items updated below.
 
-- [ ] Report title & subtitle — site says "Blue by 2032 — Power-Sharing
-      and the Future of Party Reform"; the subtitle is invented, not
-      client-supplied
-- [ ] Homepage thesis line ("the case, the evidence, and a ten-year
-      agenda") — provisional copy
+- [x] Report subtitle — **"Designing Plans for and Pathways to Sustainable
+      Democratic Majorities"** (client, July 22). Applied to masthead +
+      <title>. (The old "Power-Sharing…" subtitle was invented; retired.)
+- [x] Privacy policy — client-approved copy applied July 22.
+- [ ] **Part VI title — missing from the site-copy doc** (the House
+      section). Placeholder on the site; Jordan flagging to client.
+- [ ] **Impact-font ask (slide 2)** — Jordan is pushing back; if the client
+      insists, counter-offer bold uppercase IBM Plex Sans, never Impact.
+- [ ] **Thanks-page copy** — still "you're on the list"; needs copy matching
+      the email-delivery promise ("on its way to your inbox"), or client
+      call on instant-download + email per spec §4.
+- [ ] **Kit is now HARD launch-critical** — the applied download copy
+      promises the PDF "arrives in your inbox"; only Kit's incentive email
+      does that. (Was already required; the new copy removes any fallback.)
 - [ ] © line — "© 2026 Blue by 2032" — right legal entity?
-- [ ] Privacy policy — minimal real copy is live; needs author review
 - [ ] Launch date — site says "Coming soon"; a concrete month converts
       better
 - [ ] Organization/Role dropdown options on the capture form — drive the

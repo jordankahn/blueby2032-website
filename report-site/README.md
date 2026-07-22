@@ -7,43 +7,52 @@ framework — deployable to Netlify as-is.
 ## ⚠️ CURRENT STATE: PRE-LAUNCH (June 2026)
 
 Launch model (client decision, June 13): the site and the report go live
-TOGETHER — no pre-launch email capture. So `index.html` IS the full report
-(placeholder content for now), and the whole site is PASSWORD-GATED via a
-Netlify edge function (`netlify/edge-functions/auth.ts` + the `SITE_PASSWORD`
-env var) until the manuscript is in. Going public = deleting that env var.
+TOGETHER — no pre-launch email capture. The whole site is PASSWORD-GATED via
+a Netlify edge function (`netlify/edge-functions/auth.ts` + the
+`SITE_PASSWORD` env var). Going public = deleting that env var.
 
-- `index.html` — the full report (single scrolling page), placeholder copy,
-  with a `.preview-note` banner explaining the gray placeholders
-- `/download/` — the gated download form, currently "notify me" copy
-- `/thanks/` — post-submit page (auto-download commented out)
-- `/press/` — "press kit at launch" note (kit list preserved in a comment)
-- `/briefing/` — fully live
-- `/preview/` → 301 to `/` (the old client preview link; the report is the
-  homepage now)
+**July 22 update:** the client's site copy is POURED — real section copy
+for the exec summary and all ten parts, launch-state copy on the utility
+pages ("Send it!", "Blue by 2032 is now live"), all safe behind the gate.
+Remaining placeholders are the assets/copy still owed (see checklist).
+
+- `index.html` — the full report, real section copy; placeholders remain
+  for epigraph, byline, Part VI title, conclusion, author bio + blurbs,
+  methodology/corrections
+- `/download/` — launch copy, promises EMAIL delivery → Kit is REQUIRED
+  before launch (see comment in the file)
+- `/thanks/` — still "you're on the list" (needs copy aligned with the
+  email-delivery flow; auto-download block still commented)
+- `/press/` — client copy live; kit file list preserved in a comment
+- `/briefing/` — fully live, client copy
+- `/preview/` → 301 to `/`
 
 ### Launch checklist (when assets arrive)
 
-1. Pour the manuscript into `index.html` per CLAUDE.md; remove each
-   `.placeholder` class as you fill it. Then delete the `.preview-note`
-   banner div near the top.
+1. Fill the remaining `index.html` placeholders: epigraph + attribution,
+   byline (author name + publish date), Part VI title (client to supply),
+   conclusion, author bio + praise blurbs, methodology + corrections.
+   Then delete the `.preview-note` banner div near the top.
 2. Drop the designed PDF at `assets/report.pdf` (rename the file, not links).
-3. `thanks/index.html` — swap the "you're on the list" h1/lede for the
-   commented-out instant-download block.
-4. `download/index.html` — restore download copy per the comment in the file
-   (lede + button text).
+3. **Wire Kit before launch** — the download copy promises the PDF "arrives
+   in your inbox," and only Kit's incentive email delivers it. Steps in the
+   comment in `download/index.html`.
+4. `thanks/index.html` — replace the "you're on the list" h1/lede with copy
+   matching the email-delivery flow (e.g. "It's on its way to your inbox"),
+   or restore the commented instant-download block if delivery ends up
+   download+email per spec §4. Get client copy.
 5. `press/index.html` — drop press files in `/assets/`, uncomment the kit
-   list, retitle "Press" → "Press Kit".
+   list. (Page stays titled "Press" — client decision, July 22.)
 6. Add `assets/social-card.png` (1200×630) — the `og:image` meta is already
-   in `index.html`.
+   on every page.
 7. Replace the placeholder wordmark SVG (`index.html` + `assets/wordmark.svg`)
    with the commissioned one.
-8. Swap "Get Notified" → "Download" on the utility pages (download,
-   briefing, press, thanks, privacy). It appears TWICE per page — in the
-   nav menu AND the footer — so do a global find/replace, don't stop at
-   the footer.
-9. Have the author's team review `privacy.html` (minimal real copy is live).
-10. **Go public:** delete the `SITE_PASSWORD` env var in Netlify and redeploy.
-    Optionally wire the `briefing-request` email notification first.
+8. **Go public:** delete the `SITE_PASSWORD` env var in Netlify and redeploy.
+
+Done already: download-page launch copy + button (July 22, client copy),
+"Get Notified"→"Download" labels (July 22), privacy policy (client-approved
+copy applied July 22), briefing-request notifications → info@blueby2032.com
+(July 10).
 
 ## Structure
 

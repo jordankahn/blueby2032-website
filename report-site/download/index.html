@@ -27,7 +27,7 @@
     <nav id="site-nav" class="site-nav" aria-label="Site">
       <ul>
         <li><a href="/">Home</a></li>
-        <li><a href="/download/">Get Notified</a></li>
+        <li><a href="/download/">Download</a></li>
         <li><a href="/briefing/">Request a Briefing</a></li>
         <li><a href="/press/">Press</a></li>
         <li><a href="/privacy.html">Privacy Policy</a></li>
@@ -37,26 +37,18 @@
 
   <main class="utility-main">
     <h1>Get the Full Report</h1>
-    <p class="lede">The report is being finished now. Leave your email and the complete PDF — every chapter, the data appendices, and the full bibliography — arrives in your inbox the day it's released.</p>
+    <p class="lede">Blue by 2032 is now live. Leave your email and the complete PDF — every chapter, chart, and takeaway — arrives in your inbox.</p>
 
     <!-- ============================================================
-         PRE-LAUNCH: this is the same Netlify form as launch, used
-         as a notify list. AT LAUNCH, restore the download copy:
-         · lede → "Your download starts immediately, and we'll
-           email you a permanent link."
-         · button → "Download the Report"
-         (action="/thanks/" already does the right thing once
-         thanks/index.html re-enables the auto-download.)
-
-         OPTION A (live now): Netlify Form.
-         Works the moment you deploy. Submissions appear in the
-         Netlify dashboard (Forms tab) and can be emailed/exported.
-
-         OPTION B (recommended for list-building): Kit (ConvertKit).
+         LAUNCH COPY (client, July 2026). NOTE: this copy promises
+         EMAIL delivery ("arrives in your inbox" / "Send it!") —
+         that email is Kit's incentive email, so Kit MUST be wired
+         before launch or no email ever arrives. Kit swap:
          1. Build the same fields as a Kit form (custom fields for
             Organization and Role → subscriber tags).
          2. Set the form's success action to redirect to /thanks/.
-         3. Enable the incentive email containing the durable link.
+         3. Enable the incentive email containing the durable link
+            to /assets/report.pdf.
          4. Replace this entire <form> with Kit's HTML embed and
             restyle the classes to match.
          ============================================================ -->
@@ -104,7 +96,7 @@
           <option>Other</option>
         </select>
       </div>
-      <button class="btn btn-accent" type="submit">Notify Me at Launch</button>
+      <button class="btn btn-accent" type="submit">Send it!</button>
       <p class="form-note">We'll only use your email to send the report and occasional updates from the author. See our <a href="/privacy.html">privacy policy</a>.</p>
     </form>
   </main>
