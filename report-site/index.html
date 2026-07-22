@@ -8,8 +8,7 @@
      Remaining placeholder: publish date. (Part VI title "The House"
      is provisional — confirm with client.) The site stays
      password-gated (Netlify SITE_PASSWORD env var) until launch.
-     AT LAUNCH: fill remaining placeholders, remove the
-     .preview-note banner below, drop the designed PDF at
+     AT LAUNCH: fill the publish date, drop the designed PDF at
      assets/report.pdf, then delete the SITE_PASSWORD env var.
      ============================================================ -->
 <html lang="en">
@@ -30,9 +29,6 @@
 <body>
   <div id="progress" aria-hidden="true"></div>
 
-  <!-- Placeholder banner — remove at launch -->
-  <div class="preview-note">Work-in-progress preview &middot; <span class="placeholder">gray text like this</span> is placeholder, replaced by the manuscript at launch</div>
-
   <header class="site-header">
     <div class="bar">
       <a class="brand" href="/">Blue by <span>2032</span></a>
@@ -45,23 +41,45 @@
     </div>
     <nav id="site-nav" class="site-nav" aria-label="Report sections">
       <ol>
-        <li><a href="#executive-summary">Executive Summary</a></li>
-        <li><a href="#part-1"><span class="nav-num">I.</span>Ten Years for a Stronger Future</a></li>
-        <li><a href="#part-2"><span class="nav-num">II.</span>Campaign Fundraising</a></li>
-        <li><a href="#part-3"><span class="nav-num">III.</span>What Happened in 2024?</a></li>
-        <li><a href="#part-4"><span class="nav-num">IV.</span>In the States</a></li>
-        <li><a href="#part-5"><span class="nav-num">V.</span>The Senate</a></li>
-        <li><a href="#part-6"><span class="nav-num">VI.</span>The House</a></li>
-        <li><a href="#part-7"><span class="nav-num">VII.</span>Organizing</a></li>
-        <li><a href="#part-8"><span class="nav-num">VIII.</span>On Messaging</a></li>
-        <li><a href="#part-9"><span class="nav-num">IX.</span>Campaign Spending</a></li>
-        <li><a href="#part-10"><span class="nav-num">X.</span>The Takeaways</a></li>
-        <li><a href="#notes">Share Your Thoughts</a></li>
+        <!-- ≥1200px the outline rail handles sections; the drawer slims to this -->
+        <li class="nav-desktop"><a href="#executive-summary">Read the Report</a></li>
+        <li class="nav-outline"><a href="#executive-summary">Executive Summary</a></li>
+        <li class="nav-outline"><a href="#part-1"><span class="nav-num">I.</span>Ten Years for a Stronger Future</a></li>
+        <li class="nav-outline"><a href="#part-2"><span class="nav-num">II.</span>Campaign Fundraising</a></li>
+        <li class="nav-outline"><a href="#part-3"><span class="nav-num">III.</span>What Happened in 2024?</a></li>
+        <li class="nav-outline"><a href="#part-4"><span class="nav-num">IV.</span>In the States</a></li>
+        <li class="nav-outline"><a href="#part-5"><span class="nav-num">V.</span>The Senate</a></li>
+        <li class="nav-outline"><a href="#part-6"><span class="nav-num">VI.</span>The House</a></li>
+        <li class="nav-outline"><a href="#part-7"><span class="nav-num">VII.</span>Organizing</a></li>
+        <li class="nav-outline"><a href="#part-8"><span class="nav-num">VIII.</span>On Messaging</a></li>
+        <li class="nav-outline"><a href="#part-9"><span class="nav-num">IX.</span>Campaign Spending</a></li>
+        <li class="nav-outline"><a href="#part-10"><span class="nav-num">X.</span>The Takeaways</a></li>
+        <li class="nav-outline"><a href="#notes">Share Your Thoughts</a></li>
         <li><a href="/briefing/">Request a Briefing</a></li>
         <li><a href="/press/">Press</a></li>
       </ol>
     </nav>
   </header>
+
+  <!-- Desktop outline rail — sticky contents with scrollspy (main.js).
+       Hidden <1200px; phones/tablets use the Navigate drawer instead. -->
+  <nav class="outline" aria-label="Outline">
+    <p class="outline-title">Contents</p>
+    <ol>
+      <li><a href="#executive-summary">Executive Summary</a></li>
+      <li><a href="#part-1"><span class="nav-num">I.</span>Ten Years for a Stronger Future</a></li>
+      <li><a href="#part-2"><span class="nav-num">II.</span>Campaign Fundraising</a></li>
+      <li><a href="#part-3"><span class="nav-num">III.</span>What Happened in 2024?</a></li>
+      <li><a href="#part-4"><span class="nav-num">IV.</span>In the States</a></li>
+      <li><a href="#part-5"><span class="nav-num">V.</span>The Senate</a></li>
+      <li><a href="#part-6"><span class="nav-num">VI.</span>The House</a></li>
+      <li><a href="#part-7"><span class="nav-num">VII.</span>Organizing</a></li>
+      <li><a href="#part-8"><span class="nav-num">VIII.</span>On Messaging</a></li>
+      <li><a href="#part-9"><span class="nav-num">IX.</span>Campaign Spending</a></li>
+      <li><a href="#part-10"><span class="nav-num">X.</span>The Takeaways</a></li>
+      <li><a href="#notes">Share Your Thoughts</a></li>
+    </ol>
+  </nav>
 
   <!-- ============ MASTHEAD / REPORT COVER ============ -->
   <section class="masthead">

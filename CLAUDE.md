@@ -33,7 +33,7 @@ press/index.html    Press kit                  → /press/
 thanks/index.html   Post-download, auto-starts PDF → /thanks/
 privacy.html        Privacy policy
 css/style.css       The whole design system; tokens in :root at the top
-js/main.js          Progress bar, nav drawer, thanks auto-download, form AJAX + toasts
+js/main.js          Progress bar, nav drawer, outline scrollspy, thanks auto-download, form AJAX + toasts
 assets/             report.pdf (the gated asset), wordmark.svg, press files
 ```
 
@@ -65,8 +65,9 @@ All pending content is marked with the `.placeholder` class and
 real content:
 
 1. Replace the bracketed text AND remove the `.placeholder` class.
-2. Part titles must be updated in BOTH the section `<h2>` and the Navigate
-   menu (`#site-nav`) in index.html. Keep `id`s (`part-1` … `part-10`,
+2. Part titles must be updated in the section `<h2>`, the Navigate
+   menu (`#site-nav`), AND the desktop outline rail (`.outline`) in
+   index.html. Keep `id`s (`part-1` … `part-10`,
    `executive-summary`, `conclusion`, `author`, `notes`) unchanged — the
    nav, anchor CTAs, and any external links depend on them.
 3. Subsections use `<h3><span class="subsection-num">N.N</span>Title</h3>`.

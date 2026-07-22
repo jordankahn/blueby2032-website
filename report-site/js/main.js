@@ -26,6 +26,31 @@ if (toggle && nav) {
   });
 }
 
+// Outline rail: highlight the section currently in view
+const outline = document.querySelector(".outline");
+if (outline) {
+  const links = Array.from(outline.querySelectorAll('a[href^="#"]'));
+  const sections = links
+    .map((a) => document.getElementById(a.getAttribute("href").slice(1)))
+    .filter(Boolean);
+  let ticking = false;
+  const mark = () => {
+    ticking = false;
+    const line = window.scrollY + window.innerHeight * 0.3;
+    let current = sections[0];
+    sections.forEach((s) => { if (s.offsetTop <= line) current = s; });
+    links.forEach((a) => {
+      if (a.getAttribute("href") === "#" + current.id) a.setAttribute("aria-current", "true");
+      else a.removeAttribute("aria-current");
+    });
+  };
+  document.addEventListener("scroll", () => {
+    if (!ticking) { ticking = true; requestAnimationFrame(mark); }
+  }, { passive: true });
+  window.addEventListener("resize", mark);
+  mark();
+}
+
 // Thanks page: start the download automatically
 const dl = document.getElementById("auto-download");
 if (dl) {

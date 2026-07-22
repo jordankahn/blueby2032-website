@@ -33,7 +33,7 @@ Remaining placeholders are the assets/copy still owed (see checklist).
 1. Fill the remaining `index.html` placeholder: publish date (byline).
    Confirm the provisional Part VI title "The House" with the client. If a
    conclusion arrives, restore the commented-out Conclusion section + its
-   nav entry. Then delete the `.preview-note` banner div near the top.
+   nav entry. (The `.preview-note` banner is already removed.)
 2. Drop the designed PDF at `assets/report.pdf` (rename the file, not links).
 3. **Wire Kit before launch** — the download copy promises the PDF "arrives
    in your inbox," and only Kit's incentive email delivers it. Steps in the
@@ -65,7 +65,7 @@ press/              Press kit            → /press/
 thanks/             Post-download page (auto-starts PDF) → /thanks/
 privacy.html        Privacy policy stub
 css/style.css       Design system (ink / signal-red / newsprint tokens at top)
-js/main.js          Progress bar, section nav, auto-download
+js/main.js          Progress bar, nav drawer, outline scrollspy, auto-download
 assets/             wordmark.svg, report.pdf (PLACEHOLDER), press assets
 ```
 

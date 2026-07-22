@@ -121,6 +121,51 @@ a:hover { color: var(--accent); }
 .site-nav a:hover { color: #fff; text-decoration: underline; text-decoration-color: var(--accent); }
 .site-nav .nav-num { color: var(--accent); font-variant-numeric: tabular-nums; margin-right: 0.5em; font-weight: 700; }
 
+/* drawer contents by viewport: sections live in the drawer until the
+   outline rail takes over at 1200px, then the drawer slims down */
+.site-nav .nav-desktop { display: none; }
+@media (min-width: 1200px) {
+  .site-nav .nav-desktop { display: block; }
+  .site-nav .nav-outline { display: none; }
+  .site-nav ol, .site-nav ul { columns: 1; max-width: 24rem; margin: 0 auto; }
+}
+
+/* ---------- outline rail (≥1200px): sticky contents + scrollspy ---------- */
+.outline { display: none; }
+@media (min-width: 1200px) {
+  .outline {
+    display: block;
+    position: fixed;
+    top: 7rem;
+    left: max(1.5rem, calc(50vw - 37rem));
+    width: 13rem;
+    max-height: calc(100vh - 9.5rem);
+    overflow-y: auto;
+    font-family: var(--sans);
+  }
+}
+.outline-title {
+  font-size: 0.72rem; font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  padding-bottom: 0.5rem; margin-bottom: 0.35rem;
+  border-bottom: 3px solid var(--ink);
+}
+.outline ol { list-style: none; margin: 0; padding: 0; }
+.outline a {
+  display: block;
+  font-size: 0.8rem; line-height: 1.35;
+  color: var(--muted); text-decoration: none;
+  padding: 0.32rem 0 0.32rem 0.75rem;
+  border-left: 1px solid var(--rule-soft);
+}
+.outline a:hover { color: var(--ink); text-decoration: underline; text-decoration-color: var(--accent); }
+.outline a[aria-current="true"] {
+  color: var(--ink); font-weight: 600;
+  border-left: 3px solid var(--accent);
+  padding-left: calc(0.75rem - 2px);
+}
+.outline .nav-num { color: var(--accent); font-variant-numeric: tabular-nums; margin-right: 0.5em; font-weight: 700; }
+
 /* ---------- masthead: front page, not a cover ---------- */
 .masthead {
   background: var(--paper);
@@ -219,17 +264,6 @@ h3 { font-size: 1.25rem; font-weight: 600; margin: 2.25rem 0 0.85rem; }
 }
 .toast.show { opacity: 1; transform: none; }
 .toast-error { background: var(--paper); color: var(--ink); border: 1.5px solid var(--ink); }
-
-/* pre-launch preview banner on index-report.html — remove at launch */
-.preview-note {
-  font-family: var(--sans); font-size: 0.85rem; font-weight: 600;
-  color: var(--muted);
-  background: var(--paper);
-  border-bottom: 1px solid var(--rule-soft);
-  padding: 0.6rem var(--gutter);
-  text-align: center;
-}
-.preview-note .placeholder { font-weight: 600; }
 
 /* slim per-part CTA */
 .part-cta {
