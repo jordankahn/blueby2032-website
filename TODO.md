@@ -130,16 +130,17 @@ items updated below.
 
 ## 📦 Launch assets owed by the author (spec §8 + implied)
 
-- [ ] Full report manuscript — chaptered, numbered subsections, flagged
-      pull quotes, real part titles (current ten are placeholders)
-- [ ] Executive summary — 600–900 words
+- [x] Site copy — exec summary + all ten part bodies (poured July 22;
+      Part VI title + conclusion still missing from the doc)
+- [ ] Part VI title + conclusion copy
+- [ ] Publish date for the byline (launch date)
 - [ ] Designed PDF — the gated asset → `report-site/assets/report.pdf`
-- [ ] Author name, bio, headshot
-- [ ] 6–12 praise blurbs — named, with titles (collect pre-launch)
-- [ ] Epigraph quotes — 2–3, cleared
 - [ ] Commissioned wordmark SVG — doubles as PDF cover + social-card art
-- [ ] Social card — 1200×630 PNG (og:image is commented out until then)
+- [ ] Social card — 1200×630 PNG (og:image already wired on every page)
 - [ ] Press kit — release, fact sheet, headshot + photographer credit,
       cover art
-- [ ] Bibliography / public source documents
-- [ ] Corrections policy copy
+- ~~Author name/bio, praise blurbs, epigraphs, methodology/bibliography,
+  corrections copy~~ — **cut per client markup July 22** (byline author,
+  epigraph, About the Author, and Methodology & Corrections sections all
+  removed; Share Your Thoughts is the corrections contact now). Headshot
+  still wanted for the press kit only.

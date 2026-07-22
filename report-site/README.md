@@ -17,8 +17,9 @@ pages ("Send it!", "Blue by 2032 is now live"), all safe behind the gate.
 Remaining placeholders are the assets/copy still owed (see checklist).
 
 - `index.html` — the full report, real section copy; placeholders remain
-  for epigraph, byline, Part VI title, conclusion, author bio + blurbs,
-  methodology/corrections
+  for publish date, Part VI title, and conclusion. (Byline author,
+  epigraph, About the Author, and Methodology & Corrections were REMOVED
+  per client markup, July 22 — don't reintroduce them.)
 - `/download/` — launch copy, promises EMAIL delivery → Kit is REQUIRED
   before launch (see comment in the file)
 - `/thanks/` — still "you're on the list" (needs copy aligned with the
@@ -29,10 +30,9 @@ Remaining placeholders are the assets/copy still owed (see checklist).
 
 ### Launch checklist (when assets arrive)
 
-1. Fill the remaining `index.html` placeholders: epigraph + attribution,
-   byline (author name + publish date), Part VI title (client to supply),
-   conclusion, author bio + praise blurbs, methodology + corrections.
-   Then delete the `.preview-note` banner div near the top.
+1. Fill the remaining `index.html` placeholders: publish date (byline),
+   Part VI title (client to supply), conclusion. Then delete the
+   `.preview-note` banner div near the top.
 2. Drop the designed PDF at `assets/report.pdf` (rename the file, not links).
 3. **Wire Kit before launch** — the download copy promises the PDF "arrives
    in your inbox," and only Kit's incentive email delivers it. Steps in the
