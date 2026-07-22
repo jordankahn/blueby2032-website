@@ -132,7 +132,8 @@ items updated below.
 
 - [x] Site copy — exec summary + all ten part bodies (poured July 22;
       Part VI title + conclusion still missing from the doc)
-- [ ] Part VI title + conclusion copy
+- [ ] Part VI title. (Conclusion section HIDDEN July 22 — none supplied;
+      commented out in index.html, restore if copy ever arrives)
 - [ ] Publish date for the byline (launch date)
 - [ ] Designed PDF — the gated asset → `report-site/assets/report.pdf`
 - [ ] Commissioned wordmark SVG — doubles as PDF cover + social-card art
