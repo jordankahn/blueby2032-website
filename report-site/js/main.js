@@ -37,6 +37,8 @@ if (outline) {
   const mark = () => {
     ticking = false;
     const line = window.scrollY + window.innerHeight * 0.3;
+    // Only show the rail once the reader is into the article
+    outline.classList.toggle("visible", sections.length > 0 && line >= sections[0].offsetTop);
     let current = sections[0];
     sections.forEach((s) => { if (s.offsetTop <= line) current = s; });
     links.forEach((a) => {

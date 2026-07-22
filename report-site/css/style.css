@@ -130,7 +130,9 @@ a:hover { color: var(--accent); }
   .site-nav ol, .site-nav ul { columns: 1; max-width: 24rem; margin: 0 auto; }
 }
 
-/* ---------- outline rail (≥1200px): sticky contents + scrollspy ---------- */
+/* ---------- outline rail (≥1200px): sticky contents + scrollspy ----------
+   Hidden until the reader scrolls into the article (main.js toggles
+   .visible) so it never sits over the masthead. */
 .outline { display: none; }
 @media (min-width: 1200px) {
   .outline {
@@ -142,7 +144,14 @@ a:hover { color: var(--accent); }
     max-height: calc(100vh - 9.5rem);
     overflow-y: auto;
     font-family: var(--sans);
+    /* own paper surface so the full-bleed ink CTA bands can't
+       scroll underneath and drown the text */
+    background: var(--paper);
+    padding: 0.25rem 0.75rem 0.75rem 0;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.2s, visibility 0.2s;
   }
+  .outline.visible { opacity: 1; visibility: visible; }
 }
 .outline-title {
   font-size: 0.72rem; font-weight: 700;
