@@ -30,10 +30,10 @@ Remaining placeholders are the assets/copy still owed (see checklist).
 
 ### Launch checklist (when assets arrive)
 
-1. Fill the remaining `index.html` placeholders: publish date (byline),
-   Part VI title (client to supply). If a conclusion arrives, restore the
-   commented-out Conclusion section + its nav entry. Then delete the
-   `.preview-note` banner div near the top.
+1. Fill the remaining `index.html` placeholder: publish date (byline).
+   Confirm the provisional Part VI title "The House" with the client. If a
+   conclusion arrives, restore the commented-out Conclusion section + its
+   nav entry. Then delete the `.preview-note` banner div near the top.
 2. Drop the designed PDF at `assets/report.pdf` (rename the file, not links).
 3. **Wire Kit before launch** — the download copy promises the PDF "arrives
    in your inbox," and only Kit's incentive email delivers it. Steps in the

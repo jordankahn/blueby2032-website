@@ -110,8 +110,9 @@ items updated below.
       Democratic Majorities"** (client, July 22). Applied to masthead +
       <title>. (The old "Power-Sharing…" subtitle was invented; retired.)
 - [x] Privacy policy — client-approved copy applied July 22.
-- [ ] **Part VI title — missing from the site-copy doc** (the House
-      section). Placeholder on the site; Jordan flagging to client.
+- [ ] Part VI title — missing from the site-copy doc, so it's live as
+      **"The House"** (Jordan's call, July 22, matching Part V "The
+      Senate"). Client to confirm or correct.
 - [ ] **Impact-font ask (slide 2)** — Jordan is pushing back; if the client
       insists, counter-offer bold uppercase IBM Plex Sans, never Impact.
 - [ ] **Thanks-page copy** — still "you're on the list"; needs copy matching
@@ -132,8 +133,9 @@ items updated below.
 
 - [x] Site copy — exec summary + all ten part bodies (poured July 22;
       Part VI title + conclusion still missing from the doc)
-- [ ] Part VI title. (Conclusion section HIDDEN July 22 — none supplied;
-      commented out in index.html, restore if copy ever arrives)
+- [ ] Client confirm of Part VI title "The House". (Conclusion section
+      HIDDEN July 22 — none supplied; commented out in index.html,
+      restore if copy ever arrives)
 - [ ] Publish date for the byline (launch date)
 - [ ] Designed PDF — the gated asset → `report-site/assets/report.pdf`
 - [ ] Commissioned wordmark SVG — doubles as PDF cover + social-card art
