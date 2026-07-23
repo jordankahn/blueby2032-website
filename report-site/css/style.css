@@ -152,7 +152,7 @@ a:hover { color: var(--accent); }
   }
 }
 .outline-title {
-  font-size: 0.72rem; font-weight: 700;
+  font-size: 0.78rem; font-weight: 700;
   letter-spacing: 0.14em; text-transform: uppercase;
   padding-bottom: 0.5rem; margin-bottom: 0.35rem;
   border-bottom: 3px solid var(--ink);
@@ -160,7 +160,7 @@ a:hover { color: var(--accent); }
 .outline ol { list-style: none; margin: 0; padding: 0; }
 .outline a {
   display: block;
-  font-size: 0.8rem; line-height: 1.35;
+  font-size: 0.85rem; line-height: 1.35;
   color: var(--muted); text-decoration: none;
   padding: 0.32rem 0 0.32rem 0.75rem;
   border-left: 1px solid var(--rule-soft);
