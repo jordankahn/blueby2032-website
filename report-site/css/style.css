@@ -131,15 +131,16 @@ a:hover { color: var(--accent); }
 }
 
 /* ---------- outline rail (≥1200px): sticky contents + scrollspy ----------
-   Hidden until the reader scrolls into the article (main.js toggles
-   .visible) so it never sits over the masthead. */
+   Anchored at the article start: it scrolls up with the content, then
+   pins just below the header rule (main.js clamps `top` each frame).
+   Default top parks it offscreen so it never flashes before JS runs. */
 .outline { display: none; }
 @media (min-width: 1200px) {
   .outline {
     display: block;
     position: fixed;
-    top: 7rem;
-    left: max(1.5rem, calc(50vw - 37rem));
+    top: 100vh;
+    left: var(--gutter);
     width: 13rem;
     max-height: calc(100vh - 9.5rem);
     overflow-y: auto;
@@ -148,10 +149,7 @@ a:hover { color: var(--accent); }
        scroll underneath and drown the text */
     background: var(--paper);
     padding: 0.25rem 0.75rem 0.75rem 0;
-    opacity: 0; visibility: hidden;
-    transition: opacity 0.2s, visibility 0.2s;
   }
-  .outline.visible { opacity: 1; visibility: visible; }
 }
 .outline-title {
   font-size: 0.72rem; font-weight: 700;

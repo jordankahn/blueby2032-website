@@ -26,8 +26,10 @@ if (toggle && nav) {
   });
 }
 
-// Outline rail: highlight the section currently in view
+// Outline rail: rides with the article until it pins below the header,
+// and highlights the section currently in view
 const outline = document.querySelector(".outline");
+const siteHeader = document.querySelector(".site-header");
 if (outline) {
   const links = Array.from(outline.querySelectorAll('a[href^="#"]'));
   const sections = links
@@ -36,9 +38,11 @@ if (outline) {
   let ticking = false;
   const mark = () => {
     ticking = false;
+    if (!sections.length) return;
+    // Track the article start as it scrolls, clamped below the header rule
+    const pinTop = (siteHeader ? siteHeader.getBoundingClientRect().bottom : 70) + 20;
+    outline.style.top = Math.max(pinTop, sections[0].getBoundingClientRect().top) + "px";
     const line = window.scrollY + window.innerHeight * 0.3;
-    // Only show the rail once the reader is into the article
-    outline.classList.toggle("visible", sections.length > 0 && line >= sections[0].offsetTop);
     let current = sections[0];
     sections.forEach((s) => { if (s.offsetTop <= line) current = s; });
     links.forEach((a) => {
