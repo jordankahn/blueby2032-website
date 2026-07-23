@@ -109,7 +109,11 @@ items updated below.
 - [x] Report subtitle — **"Designing Plans for and Pathways to Sustainable
       Democratic Majorities"** (client, July 22). Applied to masthead +
       <title>. (The old "Power-Sharing…" subtitle was invented; retired.)
-- [x] Privacy policy — client-approved copy applied July 22.
+- [x] Privacy policy — client-approved copy applied July 22. **Amended
+      same day:** "Who processes it" now names Kit + Netlify and discloses
+      Kit's IP/city-level location capture (signup + opens — no Kit
+      setting to disable it, so disclosure is the fix). That paragraph
+      needs her re-approval (recap item 29).
 - [ ] Part VI title — missing from the site-copy doc, so it's live as
       **"The House"** (Jordan's call, July 22, matching Part V "The
       Senate"). Client to confirm or correct.

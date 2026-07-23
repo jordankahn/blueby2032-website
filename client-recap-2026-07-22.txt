@@ -61,6 +61,13 @@ ADDITIONAL POLISH (OUR SIDE)
     note to check Promotions/spam — we drafted this to match your
     download-page copy since the materials didn't cover this page.
     Please review and suggest any wording changes.
+29. One update to the privacy policy's "Who processes it" paragraph:
+    it now names Kit (the email service) alongside Netlify, and
+    discloses that Kit records IP address / approximate location on
+    signup and email opens — standard for email services and not
+    something that can be turned off, so it needs to be disclosed.
+    Everything else in the policy is your approved wording; please
+    confirm you're OK with this paragraph.
 
 STILL OPEN / WAITING ON
 
