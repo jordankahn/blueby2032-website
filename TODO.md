@@ -133,6 +133,12 @@ items updated below.
       notification whenever). Hand the client the Kit login with the
       mailbox credentials.
 - [ ] © line — "© 2026 Blue by 2032" — right legal entity?
+- [ ] **hello@blueby2032.com** (client request, July 22) — awaiting her
+      answer: same inbox or separate? If just another address → FREE alias
+      on the info@ user (Admin → Users → info → Email aliases → add
+      "hello"; plus Gmail → Accounts → Send mail as, to reply from it).
+      If a truly separate inbox/login → second Workspace seat (~$6-7/mo).
+      No DNS work either way — MX already covers the domain.
 - [ ] Launch date — site says "Coming soon"; a concrete month converts
       better
 - [ ] Organization/Role dropdown options on the capture form — drive the
