@@ -146,8 +146,9 @@ items updated below.
       are added in Squarespace, not Google Admin — needs her login/2FA, or
       have her click it; it's one button). Then the same activation dance
       as info@ (resend invitation → set password → accept terms), test
-      send/receive, set display name once she says what it's for, hand
-      over the login. No DNS work — MX/SPF/DKIM cover the whole domain.
+      send/receive, hand over the login. Don't overthink the display
+      name — she can rename it herself. No DNS work — MX/SPF/DKIM cover
+      the whole domain.
 - [ ] Launch date — site says "Coming soon"; a concrete month converts
       better
 - [ ] Organization/Role dropdown options on the capture form — drive the
