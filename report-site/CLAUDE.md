@@ -14,14 +14,15 @@ the download gate, and convert high-intent readers to briefing requests.
 to Netlify as-is. Do not introduce a bundler, a framework, npm, or a CSS
 preprocessor. If a change seems to require one, it's the wrong change.
 
-**PRE-LAUNCH STATE (June 2026):** site + report launch together (client
-decided against pre-launch email capture). `index.html` IS the full report
-with placeholder content, and the WHOLE SITE is password-gated by a Netlify
+**PRE-LAUNCH STATE (July 2026):** site + report launch together (no
+pre-launch email capture). `index.html` carries the client's real section
+copy (poured July 22), and the WHOLE SITE is password-gated by a Netlify
 edge function (`netlify/edge-functions/auth.ts` + the `SITE_PASSWORD` env
-var) until the manuscript lands. `/download/` shows "notify me" copy,
-`/thanks/` doesn't auto-download, `/press/` is a stub, `/preview/` 301s to
-`/`. Launch checklist is in README.md; going public = deleting the
-`SITE_PASSWORD` env var in Netlify and redeploying.
+var) until launch. The download gate runs on Kit (tested end-to-end; the
+incentive email serves a dummy PDF until the designed one lands),
+`/thanks/` says "check your inbox," `/press/` is a stub with the kit list
+commented out, `/preview/` 301s to `/`. Launch checklist is in README.md;
+going public = deleting the `SITE_PASSWORD` env var and redeploying.
 
 ## Layout
 
@@ -30,10 +31,10 @@ index.html          The entire report (single scrolling page)
 download/index.html Gated download form        → served at /download/
 briefing/index.html Briefing request form      → /briefing/
 press/index.html    Press kit                  → /press/
-thanks/index.html   Post-download, auto-starts PDF → /thanks/
+thanks/index.html   Post-signup "check your inbox" page → /thanks/
 privacy.html        Privacy policy
 css/style.css       The whole design system; tokens in :root at the top
-js/main.js          Progress bar, nav drawer, outline scrollspy, thanks auto-download, form AJAX + toasts
+js/main.js          Progress bar, nav drawer, outline scrollspy, form AJAX + toasts
 assets/             report.pdf (the gated asset), wordmark.svg, press files
 ```
 
@@ -81,26 +82,31 @@ real content:
 
 ## Things that must not break
 
-- Form names `report-download` and `briefing-request`, their
-  `data-netlify="true"` attributes, and the honeypot fields. Netlify
-  registers forms by these names; renaming them orphans the submission
-  history and notification rules.
-- The download form's `action="/thanks/"` redirect, and the
-  `id="auto-download"` link on thanks/index.html pointing at
-  `/assets/report.pdf` — together these are the "instant download" flow.
-- `/assets/report.pdf` is the gated asset's canonical path. If the designed
-  PDF arrives under another name, rename the file rather than the links
-  (the Kit incentive email will also point here).
-- js/main.js has no dependencies; keep it that way.
+- The briefing form's name `briefing-request`, its `data-netlify="true"`
+  attribute, and its honeypot field. Netlify registers the form by this
+  name; renaming it orphans the submission history and notification
+  rules. (The old `report-download` Netlify form is retired — the
+  download gate runs on Kit now.)
+- The Kit form on download/index.html: its `action` URL, the
+  `data-sv-form`/`data-uid` attributes, Kit's canonical field names
+  (`email_address`, `fields[first_name]`, `fields[last_name]`), and the
+  numeric `tags[]` option values — they map to real tags in the client's
+  Kit account. Kit's own embed export shipped with the first-name/email
+  names SWAPPED; never copy field names from it.
+- `/assets/report.pdf` is the gated asset's canonical path (the Kit
+  confirmation email currently serves a Kit-hosted copy; at launch the
+  real PDF goes both places).
+- js/main.js has no dependencies; keep it that way. (The one third-party
+  script on the site is Kit's ck.5.js on download/index.html — it does
+  the AJAX submit + /thanks/ redirect.)
 
 ## Email / list integration
 
-The download gate currently runs on Netlify Forms (works on deploy, zero
-config). The intended end state is a Kit (ConvertKit) HTML embed replacing
-the form in download/index.html — same fields, success redirect to
-/thanks/, incentive email carrying the durable PDF link. Full steps are in
-README.md. When swapping, reuse the existing input/button classes so the
-styling holds.
+DONE (July 22): the download gate posts to Kit form 9716075 in the
+client's Kit account (login = info@blueby2032.com). Single opt-in; the
+confirmation email (from info@) delivers the PDF; success redirects to
+/thanks/. Details and warnings in README.md. Briefing requests remain on
+Netlify Forms, notification → info@blueby2032.com.
 
 ## Conventions
 

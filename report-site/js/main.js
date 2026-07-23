@@ -57,12 +57,6 @@ if (outline) {
   mark();
 }
 
-// Thanks page: start the download automatically
-const dl = document.getElementById("auto-download");
-if (dl) {
-  setTimeout(() => dl.click(), 600);
-}
-
 // Toast notifications
 function showToast(message, isError) {
   let stack = document.querySelector(".toast-stack");

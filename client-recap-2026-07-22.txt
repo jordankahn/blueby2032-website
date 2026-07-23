@@ -57,6 +57,10 @@ ADDITIONAL POLISH (OUR SIDE)
     info@blueby2032.com with the download button (a placeholder PDF
     until the designed report arrives). Signups are collected in a Kit
     account we'll hand over with the login.
+28. The post-signup page now reads "Sent! Check your inbox." with a
+    note to check Promotions/spam — we drafted this to match your
+    download-page copy since the materials didn't cover this page.
+    Please review and suggest any wording changes.
 
 STILL OPEN / WAITING ON
 

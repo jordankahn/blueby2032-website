@@ -115,9 +115,11 @@ items updated below.
       Senate"). Client to confirm or correct.
 - [ ] **Impact-font ask (slide 2)** — Jordan is pushing back; if the client
       insists, counter-offer bold uppercase IBM Plex Sans, never Impact.
-- [ ] **Thanks-page copy** — still "you're on the list"; needs copy matching
-      the email-delivery promise ("on its way to your inbox"), or client
-      call on instant-download + email per spec §4.
+- [x] **Thanks-page copy updated (July 22)** — now "Sent! Check your inbox."
+      with a Promotions/spam pointer; drafted our side (client gave no
+      thanks-page guidance), flagged in the recap for her sign-off. Old
+      instant-download block + main.js auto-download hook removed; share
+      tweet no longer says "Coming soon."
 - [x] **Kit wired July 22 — end-to-end test PASSED** (form → /thanks/ →
       incentive email from info@ → dummy PDF downloaded; landed in Gmail
       Promotions tab, which is inbox, not spam — fine). Account created on

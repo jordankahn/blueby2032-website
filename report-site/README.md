@@ -20,10 +20,10 @@ Remaining placeholders are the assets/copy still owed (see checklist).
   for publish date, Part VI title, and conclusion. (Byline author,
   epigraph, About the Author, and Methodology & Corrections were REMOVED
   per client markup, July 22 — don't reintroduce them.)
-- `/download/` — launch copy, promises EMAIL delivery → Kit is REQUIRED
-  before launch (see comment in the file)
-- `/thanks/` — still "you're on the list" (needs copy aligned with the
-  email-delivery flow; auto-download block still commented)
+- `/download/` — launch copy; the form posts to Kit (tested end-to-end
+  July 22: signup → email from info@ → PDF). Dummy PDF until launch.
+- `/thanks/` — "check your inbox" copy (drafted our side July 22 — get
+  the client's sign-off; the old instant-download flow is retired)
 - `/press/` — client copy live; kit file list preserved in a comment
 - `/briefing/` — fully live, client copy
 - `/preview/` → 301 to `/`
@@ -34,21 +34,17 @@ Remaining placeholders are the assets/copy still owed (see checklist).
    Confirm the provisional Part VI title "The House" with the client. If a
    conclusion arrives, restore the commented-out Conclusion section + its
    nav entry. (The `.preview-note` banner is already removed.)
-2. Drop the designed PDF at `assets/report.pdf` (rename the file, not links).
-3. **Wire Kit before launch** — the download copy promises the PDF "arrives
-   in your inbox," and only Kit's incentive email delivers it. Steps in the
-   comment in `download/index.html`.
-4. `thanks/index.html` — replace the "you're on the list" h1/lede with copy
-   matching the email-delivery flow (e.g. "It's on its way to your inbox"),
-   or restore the commented instant-download block if delivery ends up
-   download+email per spec §4. Get client copy.
-5. `press/index.html` — drop press files in `/assets/`, uncomment the kit
+2. Drop the designed PDF at `assets/report.pdf` (rename the file, not
+   links) AND upload it to the Kit confirmation email in place of the
+   dummy (Kit → form 9716075 → Settings → Confirmation email → Download).
+3. Get the client's sign-off on the `/thanks/` "check your inbox" copy.
+4. `press/index.html` — drop press files in `/assets/`, uncomment the kit
    list. (Page stays titled "Press" — client decision, July 22.)
-6. Add `assets/social-card.png` (1200×630) — the `og:image` meta is already
+5. Add `assets/social-card.png` (1200×630) — the `og:image` meta is already
    on every page.
-7. Replace the placeholder wordmark SVG (`index.html` + `assets/wordmark.svg`)
+6. Replace the placeholder wordmark SVG (`index.html` + `assets/wordmark.svg`)
    with the commissioned one.
-8. **Go public:** delete the `SITE_PASSWORD` env var in Netlify and redeploy.
+7. **Go public:** delete the `SITE_PASSWORD` env var in Netlify and redeploy.
 
 Done already: download-page launch copy + button (July 22, client copy),
 "Get Notified"→"Download" labels (July 22), privacy policy (client-approved
@@ -62,10 +58,10 @@ index.html          The report (single scrolling page)
 download/           Gated download form  → /download/
 briefing/           Request-a-briefing   → /briefing/
 press/              Press kit            → /press/
-thanks/             Post-download page (auto-starts PDF) → /thanks/
+thanks/             Post-signup "check your inbox" page → /thanks/
 privacy.html        Privacy policy stub
 css/style.css       Design system (ink / signal-red / newsprint tokens at top)
-js/main.js          Progress bar, nav drawer, outline scrollspy, auto-download
+js/main.js          Progress bar, nav drawer, outline scrollspy, form AJAX + toasts
 assets/             wordmark.svg, report.pdf (PLACEHOLDER), press assets
 ```
 
@@ -81,19 +77,24 @@ assets/             wordmark.svg, report.pdf (PLACEHOLDER), press assets
    Domain management → add custom domain → update the DNS records it shows you.
    HTTPS is automatic.
 
-## Swapping in Kit (ConvertKit) for the download gate
+## Kit (ConvertKit) — the download gate (LIVE, tested July 22)
 
-The download form works on day one as a Netlify form (submissions collect in
-the dashboard, download still starts instantly). For list-building +
-confirmation emails, swap to Kit:
+The download form posts to **Kit form 9716075** in the client's Kit
+account (login = info@blueby2032.com). Configuration:
 
-1. In Kit: create a form with First/Last/Email + custom fields for
-   Organization and Role. Set it to **single opt-in**.
-2. Form settings → success action → **redirect to** `https://yourdomain.com/thanks/`.
-3. Enable the **incentive email** containing a link to `/assets/report.pdf`
-   (the durable link).
-4. Replace the `<form>` block in `download/index.html` with Kit's **HTML embed**
-   and reuse the existing CSS classes on the inputs/button.
+- Single opt-in (auto-confirm ON); the confirmation email doubles as the
+  incentive email — from info@blueby2032.com, button serves the PDF
+  (Kit-hosted dummy until launch).
+- Success action redirects to `/thanks/`.
+- Organization/Role dropdowns post as Kit **tags** (numeric IDs in the
+  form markup — they map to real tags in the account, don't invent).
+- The form markup in `download/index.html` is ours (site classes, real
+  labels) with Kit's canonical field names. **Kit's own embed export has
+  the first-name/email `name`s swapped — never copy names from it.**
+- Kit's `ck.5.js` on that page does the AJAX submit + redirect; without
+  JS the form still posts natively to Kit's hosted confirmation page.
+- The old `report-download` Netlify form is retired; the Netlify Forms
+  100/mo cap now only covers briefing requests.
 
 ## Before launch — find & replace
 
@@ -103,8 +104,8 @@ confirmation emails, swap to Kit:
 - All `✎ [bracketed placeholders]` — they're styled gray with a pencil mark
   so they're impossible to miss. The `.placeholder` class can be deleted as
   you replace each one.
-- `assets/report.pdf` — replace with the designed PDF (keep the filename, or
-  update the link in `thanks/index.html` and the Kit incentive email).
+- `assets/report.pdf` — replace with the designed PDF (keep the filename),
+  and upload the same file to the Kit confirmation email.
 - `assets/wordmark.svg` + the inline SVG in `index.html` — replace with the
   commissioned wordmark.
 - Add `assets/social-card.png` (1200×630) for the link preview, plus the
