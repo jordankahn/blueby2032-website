@@ -139,16 +139,12 @@ items updated below.
       notification whenever). Hand the client the Kit login with the
       mailbox credentials.
 - [ ] © line — "© 2026 Blue by 2032" — right legal entity?
-- [ ] **hello@blueby2032.com — client chose a SEPARATE account (July 23),**
-      i.e. a second Workspace seat (~$6-7/mo, billed annually via
-      Squarespace — flag the cost to her). To do: Squarespace → Manage
-      Google Workspace → Add Users → "hello" (reseller-managed, so seats
-      are added in Squarespace, not Google Admin — needs her login/2FA, or
-      have her click it; it's one button). Then the same activation dance
-      as info@ (resend invitation → set password → accept terms), test
-      send/receive, hand over the login. Don't overthink the display
-      name — she can rename it herself. No DNS work — MX/SPF/DKIM cover
-      the whole domain.
+- [x] **hello@blueby2032.com live (July 23).** Second Workspace seat
+      (client's choice: fully separate account; ~$6-7/mo via Squarespace,
+      billed annually). Activated, send + receive tested both ways.
+      Remaining: text her the login (password change on first sign-in);
+      she can set the display name herself. No site/Kit/Netlify changes —
+      info@ stays the public contact everywhere.
 - [ ] Launch date — site says "Coming soon"; a concrete month converts
       better
 - [ ] Organization/Role dropdown options on the capture form — drive the
