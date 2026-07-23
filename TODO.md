@@ -3,6 +3,20 @@
 Status as of June 13, 2026. The technical launch-day checklist (flipping
 the site out of pre-launch mode) lives in `report-site/README.md`.
 
+## ⚑ STATUS (July 23): HOLDING FOR LAUNCH
+
+Client signed off on ALL July 22 site changes with no edits. Every open
+decision is resolved. The site is feature-complete behind the gate.
+**Waiting on exactly two things from the client:**
+1. **The designed report PDF** → drop at `report-site/assets/report.pdf`
+   AND upload to the Kit confirmation email (replacing the dummy).
+2. **The go-ahead + launch date** → fills the byline `[Month Year]`, then
+   run the README launch checklist (delete `SITE_PASSWORD` env var AND
+   the auth.ts edge function, redeploy; mute the old `report-download`
+   Netlify notification).
+Art assets (wordmark, social card, press kit) slot in whenever they
+arrive — none of them block launch.
+
 ## ⚑ Launch model (client decision, June 13)
 
 **Site + report launch together. No pre-launch email capture.** The site
@@ -113,17 +127,14 @@ items updated below.
       same day:** "Who processes it" now names Kit + Netlify and discloses
       Kit's IP/city-level location capture (signup + opens — no Kit
       setting to disable it, so disclosure is the fix). That paragraph
-      needs her re-approval (recap item 29).
-- [ ] Part VI title — missing from the site-copy doc, so it's live as
-      **"The House"** (Jordan's call, July 22, matching Part V "The
-      Senate"). Client to confirm or correct.
-- [ ] **Impact-font ask (slide 2)** — Jordan is pushing back; if the client
-      insists, counter-offer bold uppercase IBM Plex Sans, never Impact.
-- [x] **Thanks-page copy updated (July 22)** — now "Sent! Check your inbox."
-      with a Promotions/spam pointer; drafted our side (client gave no
-      thanks-page guidance), flagged in the recap for her sign-off. Old
-      instant-download block + main.js auto-download hook removed; share
-      tweet no longer says "Coming soon."
+      **Approved July 23** (no edits to the recap).
+- [x] Part VI title "The House" — **client signed off July 23** (no edits
+      to the full July 22 recap).
+- [x] Impact-font ask — resolved; client accepted the site typeface
+      (no edits to the recap's pushback, July 23).
+- [x] **Thanks-page copy updated (July 22)** — "Sent! Check your inbox."
+      **Client approved July 23** (no edits to the recap). Old
+      instant-download machinery removed for good.
 - [x] **Kit wired July 22 — end-to-end test PASSED** (form → /thanks/ →
       incentive email from info@ → dummy PDF downloaded; landed in Gmail
       Promotions tab, which is inbox, not spam — fine). Account created on
