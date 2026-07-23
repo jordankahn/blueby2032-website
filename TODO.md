@@ -139,12 +139,15 @@ items updated below.
       notification whenever). Hand the client the Kit login with the
       mailbox credentials.
 - [ ] © line — "© 2026 Blue by 2032" — right legal entity?
-- [ ] **hello@blueby2032.com** (client request, July 22) — awaiting her
-      answer: same inbox or separate? If just another address → FREE alias
-      on the info@ user (Admin → Users → info → Email aliases → add
-      "hello"; plus Gmail → Accounts → Send mail as, to reply from it).
-      If a truly separate inbox/login → second Workspace seat (~$6-7/mo).
-      No DNS work either way — MX already covers the domain.
+- [ ] **hello@blueby2032.com — client chose a SEPARATE account (July 23),**
+      i.e. a second Workspace seat (~$6-7/mo, billed annually via
+      Squarespace — flag the cost to her). To do: Squarespace → Manage
+      Google Workspace → Add Users → "hello" (reseller-managed, so seats
+      are added in Squarespace, not Google Admin — needs her login/2FA, or
+      have her click it; it's one button). Then the same activation dance
+      as info@ (resend invitation → set password → accept terms), test
+      send/receive, set display name once she says what it's for, hand
+      over the login. No DNS work — MX/SPF/DKIM cover the whole domain.
 - [ ] Launch date — site says "Coming soon"; a concrete month converts
       better
 - [ ] Organization/Role dropdown options on the capture form — drive the
