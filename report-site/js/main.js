@@ -39,9 +39,14 @@ if (outline) {
   const mark = () => {
     ticking = false;
     if (!sections.length) return;
-    // Track the article start as it scrolls, clamped below the header rule
+    // Track the article start as it scrolls, clamped below the header rule;
+    // bounded at the bottom so the rail scrolls away with the article's end
     const pinTop = (siteHeader ? siteHeader.getBoundingClientRect().bottom : 70) + 20;
-    outline.style.top = Math.max(pinTop, sections[0].getBoundingClientRect().top) + "px";
+    const articleEnd = sections[sections.length - 1].getBoundingClientRect().bottom;
+    outline.style.top = Math.min(
+      Math.max(pinTop, sections[0].getBoundingClientRect().top),
+      articleEnd - outline.offsetHeight
+    ) + "px";
     const line = window.scrollY + window.innerHeight * 0.3;
     let current = sections[0];
     sections.forEach((s) => { if (s.offsetTop <= line) current = s; });
