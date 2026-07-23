@@ -1,0 +1,62 @@
+BLUE BY 2032 — SITE UPDATES, JULY 22
+
+FROM THE COPY DOC
+
+1.  Executive summary — full text added, retitled "Change is a Choice,"
+    including all 11 recommendations and the Bottom Line box
+2.  Part I — "Ten Years for a Stronger Future" — title + full text
+3.  Part II — "Campaign Fundraising" — title + full text
+4.  Part III — "What Happened in 2024?" — title + full text
+5.  Part IV — "In the States" — title + full text (key findings
+    formatted as a list)
+6.  Part V — "The Senate" — title + full text
+7.  Part VI — full text added; the doc didn't include a title for this
+    section, so it's provisionally titled "The House" — please confirm
+    or correct
+8.  Part VII — "Organizing" — title + full text
+9.  Part VIII — "On Messaging" — title + full text
+10. Part IX — "Campaign Spending" — title + full text
+11. Part X — "The Takeaways" — title + full text
+12. All section titles updated in the site navigation to match
+
+FROM THE PPT MARKUP
+
+13. Report subtitle added to the homepage: "Designing Plans for and
+    Pathways to Sustainable Democratic Majorities"
+14. Author name removed from the byline (X'd on slide 2)
+15. Epigraph quote + attribution removed (X'd on slide 3)
+16. About the Author section removed entirely — bio and praise blurbs
+    (X'd on slide 6)
+17. Methodology & Corrections section removed entirely (X'd on slide 7)
+18. Font note: the subtitle is set in the site's typeface rather than
+    Impact — [your pushback goes here]
+
+FROM THE EMAIL
+
+19. Download page — new intro copy ("Blue by 2032 is now live...") and
+    button now reads "Send it!"
+20. Briefing page — new intro copy ("We will schedule a limited number
+    of private briefings...")
+21. Press page — renamed from "Press Kit" to "Press," with the new copy
+    (inquiries -> info@blueby2032.com, links to read the report / get
+    the PDF)
+22. Privacy policy — updated to your approved wording
+23. "Share Your Thoughts" section added at the end of the report
+    (ideas, corrections, questions, tips -> info@blueby2032.com)
+
+ADDITIONAL POLISH (OUR SIDE)
+
+24. Removed the "work-in-progress preview" banner
+25. New reading experience on desktop: a "Contents" outline accompanies
+    you down the page, highlighting the section you're in (on phones/
+    tablets, the Navigate menu carries the section list)
+26. Conclusion section hidden for now (no conclusion copy was provided
+    — easy to restore if you'd like one)
+
+STILL OPEN / WAITING ON
+
+- Part VI title confirmation ("The House")
+- Publish date for the byline ("[Month Year]" placeholder)
+- The report PDF, wordmark, social card, and press-kit files
+- A decision on the small copy spots that still say "the author"
+  (briefing/download pages) now that the report has no byline

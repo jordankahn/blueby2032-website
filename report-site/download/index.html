@@ -40,63 +40,63 @@
     <p class="lede">Blue by 2032 is now live. Leave your email and the complete PDF — every chapter, chart, and takeaway — arrives in your inbox.</p>
 
     <!-- ============================================================
-         LAUNCH COPY (client, July 2026). NOTE: this copy promises
-         EMAIL delivery ("arrives in your inbox" / "Send it!") —
-         that email is Kit's incentive email, so Kit MUST be wired
-         before launch or no email ever arrives. Kit swap:
-         1. Build the same fields as a Kit form (custom fields for
-            Organization and Role → subscriber tags).
-         2. Set the form's success action to redirect to /thanks/.
-         3. Enable the incentive email containing the durable link
-            to /assets/report.pdf.
-         4. Replace this entire <form> with Kit's HTML embed and
-            restyle the classes to match.
+         KIT (ConvertKit) FORM — July 22. Posts straight to Kit; the
+         download list lives in the client's Kit account (info@).
+         ck.5.js does the AJAX submit + redirect to /thanks/; if JS is
+         blocked it falls back to a native POST and Kit's hosted
+         confirmation. Markup + classes are ours; the FIELD NAMES are
+         Kit's canonical ones — do NOT copy names from Kit's embed
+         export (it shipped with first-name/email names swapped).
+         Dropdowns post as Kit tags (numeric IDs) for segmentation.
+         Incentive email delivers the PDF (dummy file until launch).
+         The old Netlify form (report-download) is retired; its
+         submission history stays in the Netlify dashboard.
          ============================================================ -->
-    <form name="report-download" method="POST" action="/thanks/" data-netlify="true" netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="report-download">
-      <p style="display:none"><label>Don't fill this out: <input name="bot-field"></label></p>
+    <script src="https://f.convertkit.com/ckjs/ck.5.js"></script>
+    <form action="https://app.kit.com/forms/9716075/subscriptions" method="POST" class="seva-form formkit-form" data-sv-form="9716075" data-uid="06ff9636bf" data-format="inline" data-version="5" data-options="{&quot;settings&quot;:{&quot;after_subscribe&quot;:{&quot;action&quot;:&quot;redirect&quot;,&quot;success_message&quot;:&quot;Success! Now check your email for your full Blue by 2032 report.&quot;,&quot;redirect_url&quot;:&quot;https://blueby2032.com/thanks/&quot;},&quot;analytics&quot;:{&quot;google&quot;:null,&quot;fathom&quot;:null,&quot;facebook&quot;:null,&quot;segment&quot;:null,&quot;pinterest&quot;:null,&quot;sparkloop&quot;:null,&quot;googletagmanager&quot;:null},&quot;recaptcha&quot;:{&quot;enabled&quot;:false},&quot;return_visitor&quot;:{&quot;action&quot;:&quot;show&quot;,&quot;custom_content&quot;:&quot;&quot;}},&quot;version&quot;:&quot;5&quot;}">
       <div class="field-row">
         <div class="field">
           <label for="first">First name</label>
-          <input id="first" name="first_name" type="text" autocomplete="given-name" required>
+          <input id="first" name="fields[first_name]" type="text" autocomplete="given-name" required>
         </div>
         <div class="field">
           <label for="last">Last name</label>
-          <input id="last" name="last_name" type="text" autocomplete="family-name" required>
+          <input id="last" name="fields[last_name]" type="text" autocomplete="family-name" required>
         </div>
       </div>
       <div class="field">
         <label for="email">Email</label>
-        <input id="email" name="email" type="email" autocomplete="email" required>
+        <input id="email" name="email_address" type="email" autocomplete="email" required>
       </div>
       <div class="field">
         <label for="org">Organization <span class="opt">(optional)</span></label>
-        <select id="org" name="organization_type">
+        <select id="org" name="tags[]">
           <option value="">Select one…</option>
-          <option>Campaign or party committee</option>
-          <option>Advocacy organization</option>
-          <option>Foundation or philanthropy</option>
-          <option>Academic or research</option>
-          <option>Press / media</option>
-          <option>Elected office or government</option>
-          <option>Other</option>
+          <option value="21382308">Campaign or party committee</option>
+          <option value="21382323">Advocacy organization</option>
+          <option value="21382352">Foundation or philanthropy</option>
+          <option value="21382357">Academic or research</option>
+          <option value="21382394">Press / media</option>
+          <option value="21382397">Elected office or government</option>
+          <option value="21382442">Other</option>
         </select>
       </div>
       <div class="field">
         <label for="role">Role <span class="opt">(optional)</span></label>
-        <select id="role" name="role">
+        <select id="role" name="tags[]">
           <option value="">Select one…</option>
-          <option>Principal / Executive Director</option>
-          <option>Donor / Funder</option>
-          <option>Staff — strategy or political</option>
-          <option>Staff — communications</option>
-          <option>Researcher / Academic</option>
-          <option>Journalist</option>
-          <option>Organizer / Volunteer</option>
-          <option>Other</option>
+          <option value="21382476">Principal / Executive Director</option>
+          <option value="21382477">Donor / Funder</option>
+          <option value="21382479">Staff — strategy or political</option>
+          <option value="21382481">Staff — communications</option>
+          <option value="21382482">Researcher / Academic</option>
+          <option value="21382483">Journalist</option>
+          <option value="21382485">Organizer / Volunteer</option>
+          <option value="21382442">Other</option>
         </select>
       </div>
-      <button class="btn btn-accent" type="submit">Send it!</button>
+      <ul class="formkit-alert formkit-alert-error" data-element="errors" data-group="alert"></ul>
+      <button class="btn btn-accent formkit-submit" data-element="submit" type="submit"><span>Send it!</span></button>
       <p class="form-note">We'll only use your email to send the report and occasional updates from the author. See our <a href="/privacy.html">privacy policy</a>.</p>
     </form>
   </main>
