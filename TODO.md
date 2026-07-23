@@ -118,16 +118,20 @@ items updated below.
 - [ ] **Thanks-page copy** — still "you're on the list"; needs copy matching
       the email-delivery promise ("on its way to your inbox"), or client
       call on instant-download + email per spec §4.
-- [ ] **Kit wired July 22 — pending end-to-end test.** Account created on
+- [x] **Kit wired July 22 — end-to-end test PASSED** (form → /thanks/ →
+      incentive email from info@ → dummy PDF downloaded; landed in Gmail
+      Promotions tab, which is inbox, not spam — fine). Account created on
       `info@blueby2032.com` (client's by construction — hand her this login
       too). Form 9716075: single opt-in (auto-confirm ON), incentive email
       from info@ delivers a Kit-hosted DUMMY report.pdf, success redirect
       → /thanks/. Site form swapped to post to Kit (our markup, Kit's
       canonical field names — Kit's embed export had first-name/email
       names SWAPPED, don't copy from it; dropdowns → Kit tags).
-      Remaining: pass the test, then at launch upload the real PDF to Kit
-      and align /thanks/ copy with email delivery. Netlify report-download
-      form is retired (cap concern gone; mute its notification whenever).
+      Remaining at launch: upload the real PDF to Kit (replacing the
+      dummy) and align /thanks/ copy with email delivery. Netlify
+      report-download form is retired (cap concern gone; mute its
+      notification whenever). Hand the client the Kit login with the
+      mailbox credentials.
 - [ ] © line — "© 2026 Blue by 2032" — right legal entity?
 - [ ] Launch date — site says "Coming soon"; a concrete month converts
       better

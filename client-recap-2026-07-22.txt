@@ -52,6 +52,11 @@ ADDITIONAL POLISH (OUR SIDE)
     tablets, the Navigate menu carries the section list)
 26. Conclusion section hidden for now (no conclusion copy was provided
     — easy to restore if you'd like one)
+27. Email delivery for the report download is fully set up and tested:
+    submitting the form now sends a branded email from
+    info@blueby2032.com with the download button (a placeholder PDF
+    until the designed report arrives). Signups are collected in a Kit
+    account we'll hand over with the login.
 
 STILL OPEN / WAITING ON
 
