@@ -44,7 +44,11 @@ Remaining placeholders are the assets/copy still owed (see checklist).
    on every page.
 6. Replace the placeholder wordmark SVG (`index.html` + `assets/wordmark.svg`)
    with the commissioned one.
-7. **Go public:** delete the `SITE_PASSWORD` env var in Netlify and redeploy.
+7. **Go public:** delete the `SITE_PASSWORD` env var in Netlify AND delete
+   `netlify/edge-functions/auth.ts`, then redeploy. Removing the function
+   (not just the var) takes it out of the request path — otherwise every
+   public page view counts against the free tier's edge-invocation cap
+   for a no-op.
 
 Done already: download-page launch copy + button (July 22, client copy),
 "Get Notified"→"Download" labels (July 22), privacy policy (client-approved
